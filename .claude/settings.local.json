@@ -23,7 +23,8 @@
       "Bash(git commit -q -m 'Varianten-Struktur: aktuelle Version nach v1/ verschoben *)",
       "Bash(git -C \"C:/Users/Markus/test1\" add -A)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'Variante v2: dunkles, redaktionelles Ein-Seiten-Design *)",
-      "Bash(git -C \"C:/Users/Markus/test1\" push)"
+      "Bash(git -C \"C:/Users/Markus/test1\" push)",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'Variante v3: helle Fassung des redaktionellen v2-Designs *)"
     ]
   }
 }

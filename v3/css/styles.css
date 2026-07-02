@@ -1,0 +1,231 @@
+/* =========================================================
+   Vianova – Variante v3  ·  „Hell & redaktionell"
+   Gleiches Layout wie v2, aber helle Farbwelt mit Orange + Grün:
+   - heller Hintergrund statt dunkel
+   - Serifen-Display-Schrift (Fraunces) für große Headlines
+   - feste Seitennavigation links statt Kopfleiste oben
+   - Ein-Seiten-Scroll mit Ankerbereichen
+   Kontraste auf hellem Grund für WCAG-AA geprüft.
+   ========================================================= */
+
+/* 1) Tokens ------------------------------------------------ */
+:root {
+  --bg:        #ffffff;   /* heller Hintergrund */
+  --panel:     #f3f7f3;   /* Seitenleiste, zartes Grün */
+  --surface:   #eef5ef;   /* Karten/Flächen */
+  --linie:     #d9e4dc;   /* weiche Trennlinien */
+
+  --creme:     #1c2321;   /* Haupttext (dunkel) – Variablenname aus v2 beibehalten */
+  --leise:     #4a544f;   /* Sekundärtext */
+  --orange:    #e5822e;   /* Akzent hell – große/dekorative Flächen, Buttons */
+  --orange-text:#b5560f;  /* dunkleres Orange – kleiner Text (WCAG AA) */
+  --gruen:     #2f7d3e;   /* Grün-Akzent */
+
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans:  "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --sidebar: 268px;
+  --max: 62rem;
+}
+
+/* 2) Basis ------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--creme);
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.1; color: var(--creme); }
+h1 { font-size: clamp(2.6rem, 7vw, 5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(2rem, 4.5vw, 3.25rem); }
+h3 { font-size: 1.3rem; font-family: var(--font-sans); font-weight: 700; }
+p { margin: 0 0 1rem; }
+img { max-width: 100%; height: auto; }
+a { color: var(--creme); text-decoration-color: var(--orange); text-underline-offset: 3px; }
+a:hover { color: var(--orange-text); }
+
+/* 3) Zugänglichkeit --------------------------------------- */
+:focus-visible { outline: 3px solid var(--orange-text); outline-offset: 3px; border-radius: 3px; }
+
+.skip-link {
+  position: absolute; left: 1rem; top: -100px; z-index: 200;
+  background: var(--orange); color: #1a1108; font-weight: 700;
+  padding: 0.75rem 1.25rem; border-radius: 8px; text-decoration: none;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* 4) Seitennavigation (fest, links) ----------------------- */
+.sidebar {
+  position: fixed; inset: 0 auto 0 0;
+  width: var(--sidebar); height: 100vh;
+  background: var(--panel);
+  border-right: 1px solid var(--linie);
+  display: flex; flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  z-index: 100;
+}
+.sidebar__brand { display: block; margin-bottom: 0.35rem; }
+.sidebar__brand img { height: 38px; width: auto; }
+.sidebar__tag {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--leise); margin: 0 0 2rem;
+}
+
+.sidenav { margin-top: 0.5rem; }
+.sidenav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+.sidenav a {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.6rem 0.75rem; border-radius: 8px;
+  text-decoration: none; color: var(--leise); font-weight: 600;
+}
+.sidenav a .num {
+  font-family: var(--font-serif); font-size: 0.85rem; color: var(--orange-text);
+  min-width: 1.5rem;
+}
+.sidenav a:hover { background: var(--surface); color: var(--creme); }
+.sidenav a[aria-current="true"] { color: var(--creme); background: var(--surface); }
+.sidenav a[aria-current="true"] .num { color: var(--gruen); }
+
+.sidebar__foot { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--linie); font-size: 0.9rem; color: var(--leise); }
+.sidebar__foot a { color: var(--creme); }
+.text-size { display: flex; gap: 0.3rem; margin-bottom: 1rem; }
+.text-size__btn {
+  min-width: 38px; min-height: 38px; cursor: pointer;
+  background: transparent; color: var(--creme);
+  border: 1px solid var(--linie); border-radius: 8px; font-weight: 700;
+}
+.text-size__btn:hover { background: var(--surface); }
+
+/* Mobile-Kopfleiste (nur < 900px sichtbar) */
+.topbar { display: none; }
+
+/* 5) Hauptinhalt ------------------------------------------ */
+.content { margin-left: var(--sidebar); }
+.section { padding: clamp(3.5rem, 9vw, 7rem) clamp(1.5rem, 5vw, 5rem); border-top: 1px solid var(--linie); }
+.section:first-child { border-top: 0; }
+.section__inner { max-width: var(--max); margin-inline: auto; }
+.eyebrow {
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.16em;
+  font-size: 0.85rem; font-weight: 700; color: var(--orange-text); margin: 0 0 1rem;
+}
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center;
+  background: radial-gradient(90% 60% at 15% 0%, rgba(240,145,60,0.10), transparent 60%); }
+.hero__inner { max-width: var(--max); margin-inline: auto; }
+.hero h1 { margin: 0 0 1.5rem; max-width: 15ch; }
+.hero h1 .akz { color: var(--orange); font-style: italic; }
+.hero__lead { font-size: clamp(1.15rem, 2vw, 1.5rem); color: var(--leise); max-width: 46ch; margin-bottom: 2rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 0.85rem 1.75rem; border-radius: 999px;
+  font-weight: 700; text-decoration: none; cursor: pointer; border: 2px solid transparent; font-size: 1.05rem; }
+.btn--primary { background: var(--orange); color: #1a1108; }
+.btn--primary:hover { background: #ffa860; color: #1a1108; }
+.btn--ghost { border-color: var(--linie); color: var(--creme); }
+.btn--ghost:hover { border-color: var(--orange); color: var(--orange-text); }
+
+/* Über uns – großes Zitat */
+.lead-quote {
+  font-family: var(--font-serif); font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.25; color: var(--creme); margin: 0 0 2rem; max-width: 22ch;
+}
+.lead-quote .akz { color: var(--gruen); font-style: italic; }
+.split2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+.split2 p { color: var(--leise); }
+.values { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.values li { padding-left: 1.25rem; border-left: 2px solid var(--gruen); }
+.values strong { color: var(--creme); display: block; font-family: var(--font-sans); }
+
+/* Angebote – redaktionelle Liste mit großen Nummern */
+.offer-list { margin: 2.5rem 0 0; border-top: 1px solid var(--linie); }
+.offer-row {
+  display: grid; grid-template-columns: 5rem 1fr; gap: 1.5rem; align-items: baseline;
+  padding: 1.5rem 0; border-bottom: 1px solid var(--linie);
+}
+.offer-row__num { font-family: var(--font-serif); font-size: 2rem; color: var(--orange); }
+.offer-row__title { margin: 0 0 0.35rem; font-family: var(--font-serif); font-weight: 600; font-size: 1.5rem; color: var(--creme); }
+.offer-row__desc { margin: 0; color: var(--leise); max-width: 60ch; }
+
+/* Partner – echte Logos auf hellen „Chips" */
+.partner-grid {
+  list-style: none; margin: 2.5rem 0 0; padding: 0;
+  display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+.partner-chip {
+  background: #fff; border: 1px solid var(--linie); border-radius: 14px; padding: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 130px; box-shadow: 0 2px 10px rgba(20,50,25,0.06);
+}
+.partner-chip img { max-height: 84px; width: auto; object-fit: contain; }
+.partner-note { color: var(--leise); margin-top: 1.75rem; max-width: 60ch; }
+
+/* Kontakt */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+.contact-big { font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.3; }
+.contact-big a { color: var(--orange); text-decoration: none; }
+.contact-big a:hover { text-decoration: underline; }
+.contact-meta { color: var(--leise); }
+.contact-meta dt { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--orange-text); margin-top: 1.25rem; }
+.contact-meta dd { margin: 0.2rem 0 0; color: var(--creme); }
+.contact-meta address { font-style: normal; }
+
+/* Fußzeile */
+.site-foot { border-top: 1px solid var(--linie); padding: 2rem clamp(1.5rem, 5vw, 5rem);
+  color: var(--leise); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; justify-content: space-between; }
+.site-foot a { color: var(--creme); }
+
+/* 6) Responsiv --------------------------------------------- */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .content { margin-left: 0; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    position: sticky; top: 0; z-index: 100;
+    background: var(--panel); border-bottom: 1px solid var(--linie);
+    padding: 0.75rem 1.25rem;
+  }
+  .topbar__brand img { height: 34px; width: auto; display: block; }
+  .topbar__toggle {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--creme); border: 1px solid var(--linie);
+    border-radius: 8px; padding: 0.5rem 0.85rem; font-weight: 700; cursor: pointer;
+  }
+
+  /* Ausklapp-Navigation mobil */
+  .mobilenav { display: none; background: var(--panel); border-bottom: 1px solid var(--linie);
+    position: sticky; top: 57px; z-index: 99; padding: 0.5rem 1rem 1rem; }
+  .mobilenav.is-open { display: block; }
+  .mobilenav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
+  .mobilenav a { display: block; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: var(--creme); font-weight: 600; }
+  .mobilenav a:hover { background: var(--surface); }
+  .mobilenav .text-size { margin: 0.75rem 0 0; }
+
+  .split2, .contact-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .offer-row { grid-template-columns: 3.25rem 1fr; gap: 1rem; }
+}
+
+/* Sehr schmale Geräte: Partner einspaltig-freundlicher */
+@media (max-width: 420px) {
+  .partner-grid { grid-template-columns: 1fr 1fr; }
+}

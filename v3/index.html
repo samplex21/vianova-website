@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elternverein Vianova – ein neuer Weg</title>
+  <meta name="description" content="Elternverein Vianova, Reutte: Begleitung für Menschen mit Behinderungen auf dem Weg in ein selbstbestimmtes Leben.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#start">Zum Hauptinhalt springen</a>
+
+  <!-- Seitennavigation (Desktop) -->
+  <header class="sidebar">
+    <a class="sidebar__brand" href="#start" aria-label="Elternverein Vianova – zum Seitenanfang">
+      <img src="assets/vianova-logo.svg" alt="Vianova">
+    </a>
+    <p class="sidebar__tag">Elternverein · Reutte</p>
+
+    <nav class="sidenav" aria-label="Seitenbereiche">
+      <ul>
+        <li><a href="#start"><span class="num" aria-hidden="true">01</span> Start</a></li>
+        <li><a href="#ueber"><span class="num" aria-hidden="true">02</span> Über uns</a></li>
+        <li><a href="#angebote"><span class="num" aria-hidden="true">03</span> Angebote</a></li>
+        <li><a href="#partner"><span class="num" aria-hidden="true">04</span> Fördergeber</a></li>
+        <li><a href="#kontakt"><span class="num" aria-hidden="true">05</span> Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__foot">
+      <div class="text-size" role="group" aria-label="Schriftgröße anpassen">
+        <button type="button" class="text-size__btn" data-size="decrease" aria-label="Schrift verkleinern">A−</button>
+        <button type="button" class="text-size__btn" data-size="reset" aria-label="Schriftgröße zurücksetzen">A</button>
+        <button type="button" class="text-size__btn" data-size="increase" aria-label="Schrift vergrößern">A+</button>
+      </div>
+      <p>Planseestraße 13, 6600 Reutte<br>
+      <a href="tel:+43567262486">+43 5672 62486</a></p>
+    </div>
+  </header>
+
+  <!-- Kopfleiste (Mobil) -->
+  <div class="topbar">
+    <a class="topbar__brand" href="#start" aria-label="Elternverein Vianova – zum Seitenanfang">
+      <img src="assets/vianova-logo.svg" alt="Vianova">
+    </a>
+    <button type="button" class="topbar__toggle" aria-expanded="false" aria-controls="mobilenav">Menü</button>
+  </div>
+  <nav id="mobilenav" class="mobilenav" aria-label="Seitenbereiche (mobil)">
+    <ul>
+      <li><a href="#start">Start</a></li>
+      <li><a href="#ueber">Über uns</a></li>
+      <li><a href="#angebote">Angebote</a></li>
+      <li><a href="#partner">Fördergeber</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="text-size" role="group" aria-label="Schriftgröße anpassen">
+      <button type="button" class="text-size__btn" data-size="decrease" aria-label="Schrift verkleinern">A−</button>
+      <button type="button" class="text-size__btn" data-size="reset" aria-label="Schriftgröße zurücksetzen">A</button>
+      <button type="button" class="text-size__btn" data-size="increase" aria-label="Schrift vergrößern">A+</button>
+    </div>
+  </nav>
+
+  <main class="content">
+    <!-- 01 Start -->
+    <section id="start" class="section hero" aria-labelledby="hero-h">
+      <div class="hero__inner">
+        <p class="eyebrow">Elternverein Vianova · seit über 20 Jahren</p>
+        <h1 id="hero-h">Ein <span class="akz">neuer Weg</span> in ein selbstbestimmtes Leben.</h1>
+        <p class="hero__lead">
+          Wir begleiten Kinder, Jugendliche und Erwachsene mit Behinderungen –
+          persönlich, wertschätzend und ganz nach ihrem individuellen Bedarf.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#angebote">Unsere Angebote</a>
+          <a class="btn btn--ghost" href="#kontakt">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Über uns -->
+    <section id="ueber" class="section" aria-labelledby="ueber-h">
+      <div class="section__inner">
+        <p class="eyebrow">Über uns</p>
+        <h2 id="ueber-h" class="visually-hidden">Über uns</h2>
+        <div class="split2">
+          <div>
+            <p class="lead-quote">„Via nova“ heißt <span class="akz">neuer Weg</span> – wir helfen Menschen, ihren eigenen zu finden.</p>
+          </div>
+          <div>
+            <p>
+              Der Elternverein Vianova ist ein gemeinnütziger Verein aus Reutte in
+              Tirol. Unsere Arbeit ist personenzentriert und orientiert sich immer
+              am konkreten Bedarf der Menschen, die wir begleiten – nicht an
+              starren Vorgaben.
+            </p>
+            <ul class="values">
+              <li><strong>Selbstbestimmung</strong> Menschen entscheiden über ihren eigenen Weg.</li>
+              <li><strong>Teilhabe</strong> Mittendrin in Gesellschaft und Arbeitsleben.</li>
+              <li><strong>Individueller Bedarf</strong> Jede Begleitung ist einzigartig.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Angebote -->
+    <section id="angebote" class="section" aria-labelledby="angebote-h">
+      <div class="section__inner">
+        <p class="eyebrow">Was wir anbieten</p>
+        <h2 id="angebote-h">Acht Wege, Menschen zu begleiten.</h2>
+        <div class="offer-list">
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">01</span>
+            <div>
+              <h3 class="offer-row__title">Advokatorische Assistenz für Erwachsene</h3>
+              <p class="offer-row__desc">Mobile Begleitung im alltäglichen Leben für Erwachsene mit Behinderung.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">02</span>
+            <div>
+              <h3 class="offer-row__title">Advokatorische Assistenz für Kinder &amp; Jugendliche</h3>
+              <p class="offer-row__desc">Freizeitbegleitung und persönliche Unterstützung für junge Menschen.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">03</span>
+            <div>
+              <h3 class="offer-row__title">Erziehungshilfe</h3>
+              <p class="offer-row__desc">Spezialisierte Hilfe im Rahmen der Kinder- und Jugendhilfe.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">04</span>
+            <div>
+              <h3 class="offer-row__title">Familienberatungsstelle</h3>
+              <p class="offer-row__desc">Beratungsangebote für Familien in unterschiedlichen Lebenslagen.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">05</span>
+            <div>
+              <h3 class="offer-row__title">Mittendrin</h3>
+              <p class="offer-row__desc">Berufliche Integration für Menschen mit hohem Unterstützungsbedarf.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">06</span>
+            <div>
+              <h3 class="offer-row__title">Arbeitsassistenz</h3>
+              <p class="offer-row__desc">Unterstützung bei Suche und Erhalt eines passenden Arbeitsplatzes.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">07</span>
+            <div>
+              <h3 class="offer-row__title">Berufsausbildungsassistenz</h3>
+              <p class="offer-row__desc">Begleitung während der beruflichen Ausbildung.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-row__num" aria-hidden="true">08</span>
+            <div>
+              <h3 class="offer-row__title">Jobcoaching</h3>
+              <p class="offer-row__desc">Praxisnahes Coaching direkt am Arbeitsplatz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Fördergeber -->
+    <section id="partner" class="section" aria-labelledby="partner-h">
+      <div class="section__inner">
+        <p class="eyebrow">Möglich gemacht von</p>
+        <h2 id="partner-h">Unsere Fördergeber</h2>
+        <ul class="partner-grid">
+          <li class="partner-chip"><img src="assets/partner/neba.jpg" alt="NEBA – Netzwerk Berufliche Assistenz"></li>
+          <li class="partner-chip"><img src="assets/partner/sozialministeriumservice.jpg" alt="Sozialministeriumservice"></li>
+          <li class="partner-chip"><img src="assets/partner/land-tirol.png" alt="Land Tirol"></li>
+          <li class="partner-chip"><img src="assets/partner/bka.svg" alt="Bundeskanzleramt Österreich"></li>
+          <li class="partner-chip"><img src="assets/partner/familienberatung.jpg" alt="Familienberatung"></li>
+        </ul>
+        <p class="partner-note">
+          Die Arbeit des Elternvereins Vianova wird durch die Unterstützung dieser
+          Fördergeber und Systempartner:innen ermöglicht.
+        </p>
+      </div>
+    </section>
+
+    <!-- 05 Kontakt -->
+    <section id="kontakt" class="section" aria-labelledby="kontakt-h">
+      <div class="section__inner">
+        <p class="eyebrow">Sprechen wir</p>
+        <h2 id="kontakt-h">Kontakt</h2>
+        <div class="contact-grid">
+          <p class="contact-big">
+            Rufen Sie an:<br>
+            <a href="tel:+43567262486">+43 5672 62486</a><br>
+            oder schreiben Sie:<br>
+            <a href="mailto:office@vianova-austria.at">office@vianova-austria.at</a>
+          </p>
+          <dl class="contact-meta">
+            <dt>Adresse</dt>
+            <dd><address>Elternverein Vianova<br>Planseestraße 13<br>6600 Reutte, Österreich</address></dd>
+            <dt>Bürozeiten</dt>
+            <dd>Montag bis Freitag, 9–13 Uhr<br>oder nach Vereinbarung</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>© <span id="jahr">2026</span> Elternverein Vianova · ZVR 248306176</p>
+    <p><a href="../index.html">← Zur Varianten-Übersicht</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
