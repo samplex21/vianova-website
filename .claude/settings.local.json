@@ -11,7 +11,16 @@
       "Bash(git commit -q -m 'Unterseiten Kontakt, Ueber uns, Partner:innen *)",
       "Bash(git commit -q -m 'Unterseiten Aktuelles, Impressum, Datenschutz *)",
       "Bash(git commit -q -m 'Zeilenenden normalisieren \\(.gitattributes\\) *)",
-      "Bash(git commit -q -m 'Logo einbinden und Design an Logo-Farben anpassen *)"
+      "Bash(git commit -q -m 'Logo einbinden und Design an Logo-Farben anpassen *)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "WebFetch(domain:samplex21.github.io)",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget",
+      "Bash(git mv *)",
+      "Bash(git commit -q -m 'Varianten-Struktur: aktuelle Version nach v1/ verschoben *)"
     ]
   }
 }
