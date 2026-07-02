@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:vianova-austria.at)",
       "Bash(git add *)",
-      "Bash(git commit -q -m 'Startseite: barrierefreie Neufassung \\(HTML, CSS, JS\\) *)"
+      "Bash(git commit -q -m 'Startseite: barrierefreie Neufassung \\(HTML, CSS, JS\\) *)",
+      "Bash(py --version)",
+      "Bash(npx --version)",
+      "Bash(git commit -q -m 'Vorschau-Server einrichten \\(launch.json\\) *)"
     ]
   }
 }
