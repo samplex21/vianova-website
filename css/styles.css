@@ -7,16 +7,18 @@
 
 /* 1) Design-Tokens ---------------------------------------- */
 :root {
-  --farbe-primär:        #0f5f5c;   /* tiefes Teal */
-  --farbe-primär-dunkel: #0a4644;
-  --farbe-akzent:        #b5480f;   /* warmes Orange, AA auf Weiß */
+  --farbe-primär:        #2f7d3e;   /* Blattgrün (Logo) – Hauptfarbe */
+  --farbe-primär-dunkel: #1f5a2a;   /* Dunkelgrün – Text, Überschriften, dunkle Flächen */
+  --farbe-primär-hell:   #3e9b4d;   /* helles Logo-Grün – dekorativ */
+  --farbe-akzent:        #e5822e;   /* Logo-Orange – dekorativ (Rahmen, Flächen) */
+  --farbe-akzent-dunkel: #b5560f;   /* dunkleres Orange – Akzent-Text auf Weiß (AA) */
   --farbe-text:          #1c2321;   /* fast schwarz, weich */
   --farbe-text-leise:    #4a544f;
   --farbe-bg:            #ffffff;
-  --farbe-bg-alt:        #f1f6f4;
-  --farbe-bg-dunkel:     #0a4644;
-  --farbe-rahmen:        #d6e0dc;
-  --farbe-fokus:         #b5480f;
+  --farbe-bg-alt:        #eef5ef;   /* zartes Grün */
+  --farbe-bg-dunkel:     #1f5a2a;   /* Dunkelgrün für CTA/Footer */
+  --farbe-rahmen:        #d3e2d6;
+  --farbe-fokus:         #b5560f;   /* Orange-Fokus – gut sichtbar, auch auf Grün */
 
   --radius:      12px;
   --radius-klein: 8px;
@@ -52,7 +54,7 @@ p { margin: 0 0 1rem; }
 img { max-width: 100%; height: auto; }
 
 a { color: var(--farbe-primär-dunkel); }
-a:hover { color: var(--farbe-akzent); }
+a:hover { color: var(--farbe-akzent-dunkel); }
 
 /* 3) Zugänglichkeit --------------------------------------- */
 
@@ -126,12 +128,7 @@ a:hover { color: var(--farbe-akzent); }
 }
 
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; margin-right: auto; }
-.brand__mark {
-  display: grid; place-items: center;
-  width: 42px; height: 42px;
-  background: var(--farbe-primär); color: #fff;
-  border-radius: 10px; font-weight: 700; font-size: 1.4rem;
-}
+.brand__logo { display: block; height: 40px; width: auto; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name { font-weight: 700; font-size: 1.3rem; color: var(--farbe-primär-dunkel); }
 .brand__tag { font-size: 0.85rem; color: var(--farbe-text-leise); }
@@ -200,14 +197,14 @@ a:hover { color: var(--farbe-akzent); }
 /* Hero */
 .hero {
   background:
-    radial-gradient(1200px 400px at 80% -10%, rgba(181, 72, 15, 0.10), transparent),
+    radial-gradient(1200px 400px at 80% -10%, rgba(229, 130, 46, 0.12), transparent),
     linear-gradient(180deg, var(--farbe-bg-alt), var(--farbe-bg));
   padding-block: clamp(3rem, 9vw, 6rem);
 }
 .hero__content { max-width: 46rem; }
 .hero__eyebrow {
   text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent);
+  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent-dunkel);
   margin-bottom: 0.75rem;
 }
 .hero__lead { font-size: 1.3rem; color: var(--farbe-text-leise); max-width: 40rem; }
@@ -252,7 +249,7 @@ a:hover { color: var(--farbe-akzent); }
 .cta a { color: #ffd9c2; font-weight: 700; }
 .cta a:hover { color: #fff; }
 .cta__contact { display: flex; flex-wrap: wrap; gap: 0.5rem 2.5rem; margin-top: 1rem; font-size: 1.2rem; }
-.cta__label { color: #a9d6d1; margin-right: 0.35rem; }
+.cta__label { color: #b7dcbb; margin-right: 0.35rem; }
 
 /* Fußzeile */
 .site-footer { background: var(--farbe-primär-dunkel); color: #e7f1ef; margin-top: auto; }
@@ -279,7 +276,7 @@ a:hover { color: var(--farbe-akzent); }
 }
 .page-head__eyebrow {
   text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent);
+  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent-dunkel);
   margin-bottom: 0.5rem;
 }
 .page-head__lead { font-size: 1.2rem; color: var(--farbe-text-leise); max-width: 55ch; }
@@ -369,7 +366,7 @@ a:hover { color: var(--farbe-akzent); }
 .form-note { color: var(--farbe-text-leise); font-size: 0.95rem; }
 .form__row { display: grid; gap: 0.35rem; margin-bottom: 1.1rem; }
 .form label { font-weight: 700; color: var(--farbe-primär-dunkel); }
-.form .req { color: var(--farbe-akzent); }
+.form .req { color: var(--farbe-akzent-dunkel); }
 .form .optional { font-weight: 400; color: var(--farbe-text-leise); font-size: 0.9rem; }
 .form input, .form textarea {
   font: inherit; padding: 0.7rem 0.85rem;
@@ -408,7 +405,7 @@ a:hover { color: var(--farbe-akzent); }
 .tag { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px;
   font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
 .tag--job { background: #e3f0ee; color: var(--farbe-primär-dunkel); }
-.tag--event { background: #fdeadd; color: var(--farbe-akzent); }
+.tag--event { background: #fdeadd; color: var(--farbe-akzent-dunkel); }
 .social-hint { margin-top: 1.5rem; font-size: 1.05rem; }
 
 /* 6) Responsiv --------------------------------------------- */
