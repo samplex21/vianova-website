@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:vianova-austria.at)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Startseite: barrierefreie Neufassung \\(HTML, CSS, JS\\) *)"
+    ]
+  }
+}

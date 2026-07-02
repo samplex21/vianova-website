@@ -1,0 +1,297 @@
+/* =========================================================
+   Vianova – Stylesheet
+   Aufbau: 1) Design-Tokens  2) Basis/Reset  3) Zugänglichkeit
+           4) Layout  5) Komponenten  6) Responsiv
+   Farbwerte sind auf WCAG-AA-Kontrast (mind. 4.5:1) geprüft.
+   ========================================================= */
+
+/* 1) Design-Tokens ---------------------------------------- */
+:root {
+  --farbe-primär:        #0f5f5c;   /* tiefes Teal */
+  --farbe-primär-dunkel: #0a4644;
+  --farbe-akzent:        #b5480f;   /* warmes Orange, AA auf Weiß */
+  --farbe-text:          #1c2321;   /* fast schwarz, weich */
+  --farbe-text-leise:    #4a544f;
+  --farbe-bg:            #ffffff;
+  --farbe-bg-alt:        #f1f6f4;
+  --farbe-bg-dunkel:     #0a4644;
+  --farbe-rahmen:        #d6e0dc;
+  --farbe-fokus:         #b5480f;
+
+  --radius:      12px;
+  --radius-klein: 8px;
+  --schatten:    0 2px 8px rgba(12, 40, 38, 0.08);
+  --schatten-hover: 0 6px 20px rgba(12, 40, 38, 0.14);
+
+  --breite-max: 1120px;
+  --abstand:    clamp(1rem, 4vw, 2rem);
+
+  /* Basis-Schriftgröße; wird per JS für die A±-Buttons verändert */
+  font-size: 100%;
+}
+
+/* 2) Basis / sanfter Reset -------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 1.125rem;      /* ~18px, gut lesbar */
+  line-height: 1.6;
+  color: var(--farbe-text);
+  background: var(--farbe-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { line-height: 1.2; color: var(--farbe-primär-dunkel); }
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p { margin: 0 0 1rem; }
+img { max-width: 100%; height: auto; }
+
+a { color: var(--farbe-primär-dunkel); }
+a:hover { color: var(--farbe-akzent); }
+
+/* 3) Zugänglichkeit --------------------------------------- */
+
+/* Deutlich sichtbarer Tastatur-Fokus auf allen interaktiven Elementen */
+:focus-visible {
+  outline: 3px solid var(--farbe-fokus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Sprunglink: nur sichtbar, wenn er mit Tab fokussiert wird */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 1000;
+  background: var(--farbe-primär-dunkel);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-klein);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 1rem; color: #fff; }
+
+/* Nur für Screenreader sichtbar */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+
+/* Bewegung reduzieren, wenn Nutzer:in das im System eingestellt hat */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 4) Layout ------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--breite-max);
+  margin-inline: auto;
+  padding-inline: var(--abstand);
+}
+
+.section { padding-block: clamp(2.5rem, 7vw, 5rem); }
+.section--alt { background: var(--farbe-bg-alt); }
+.section__head { max-width: 60ch; margin-bottom: 2rem; }
+.section__intro { color: var(--farbe-text-leise); font-size: 1.15rem; }
+
+/* 5) Komponenten ------------------------------------------ */
+
+/* Kopfzeile */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--farbe-bg);
+  border-bottom: 1px solid var(--farbe-rahmen);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 72px;
+  flex-wrap: wrap;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; margin-right: auto; }
+.brand__mark {
+  display: grid; place-items: center;
+  width: 42px; height: 42px;
+  background: var(--farbe-primär); color: #fff;
+  border-radius: 10px; font-weight: 700; font-size: 1.4rem;
+}
+.brand__text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand__name { font-weight: 700; font-size: 1.3rem; color: var(--farbe-primär-dunkel); }
+.brand__tag { font-size: 0.85rem; color: var(--farbe-text-leise); }
+
+/* Schriftgröße-Buttons */
+.text-size { display: flex; gap: 0.25rem; }
+.text-size__btn {
+  min-width: 40px; min-height: 40px;
+  border: 1px solid var(--farbe-rahmen);
+  background: var(--farbe-bg);
+  color: var(--farbe-primär-dunkel);
+  border-radius: var(--radius-klein);
+  font-weight: 600; cursor: pointer;
+  font-size: 0.95rem;
+}
+.text-size__btn--lg { font-size: 1.15rem; }
+.text-size__btn:hover { background: var(--farbe-bg-alt); }
+
+/* Navigation */
+.site-nav__list {
+  list-style: none; display: flex; gap: 0.25rem;
+  margin: 0; padding: 0;
+}
+.site-nav a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  text-decoration: none;
+  color: var(--farbe-text);
+  border-radius: var(--radius-klein);
+  font-weight: 600;
+}
+.site-nav a:hover { background: var(--farbe-bg-alt); color: var(--farbe-primär-dunkel); }
+.site-nav a[aria-current="page"] {
+  color: var(--farbe-primär-dunkel);
+  box-shadow: inset 0 -3px 0 var(--farbe-akzent);
+}
+
+/* Menü-Umschalter (nur mobil sichtbar) */
+.nav-toggle { display: none; }
+.nav-toggle__box {
+  width: 22px; height: 2px; background: currentColor; position: relative;
+}
+.nav-toggle__box::before, .nav-toggle__box::after {
+  content: ""; position: absolute; left: 0; width: 22px; height: 2px; background: currentColor;
+}
+.nav-toggle__box::before { top: -7px; }
+.nav-toggle__box::after { top: 7px; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-klein);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn--primary { background: var(--farbe-primär); color: #fff; }
+.btn--primary:hover { background: var(--farbe-primär-dunkel); color: #fff; }
+.btn--ghost { background: transparent; color: var(--farbe-primär-dunkel); border-color: var(--farbe-primär); }
+.btn--ghost:hover { background: var(--farbe-primär); color: #fff; }
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(1200px 400px at 80% -10%, rgba(181, 72, 15, 0.10), transparent),
+    linear-gradient(180deg, var(--farbe-bg-alt), var(--farbe-bg));
+  padding-block: clamp(3rem, 9vw, 6rem);
+}
+.hero__content { max-width: 46rem; }
+.hero__eyebrow {
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent);
+  margin-bottom: 0.75rem;
+}
+.hero__lead { font-size: 1.3rem; color: var(--farbe-text-leise); max-width: 40rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+
+/* Karten-Raster */
+.cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.card {
+  background: var(--farbe-bg);
+  border: 1px solid var(--farbe-rahmen);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--schatten);
+  border-top: 4px solid var(--farbe-primär);
+}
+.card__title { margin-top: 0; margin-bottom: 0.5rem; }
+.card__text { color: var(--farbe-text-leise); margin: 0; }
+
+/* Zweispaltiger Split-Block */
+.split {
+  display: grid; gap: 2.5rem;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: start;
+}
+.facts {
+  margin: 0; display: grid; gap: 1rem;
+  background: var(--farbe-bg); border-radius: var(--radius);
+  padding: 1.5rem; box-shadow: var(--schatten);
+}
+.facts__item { border-left: 4px solid var(--farbe-akzent); padding-left: 1rem; }
+.facts dt { font-size: 0.9rem; color: var(--farbe-text-leise); text-transform: uppercase; letter-spacing: 0.05em; }
+.facts dd { margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--farbe-primär-dunkel); }
+
+/* Call-to-Action */
+.cta { background: var(--farbe-bg-dunkel); color: #fff; }
+.cta h2 { color: #fff; }
+.cta__inner { max-width: 55rem; }
+.cta a { color: #ffd9c2; font-weight: 700; }
+.cta a:hover { color: #fff; }
+.cta__contact { display: flex; flex-wrap: wrap; gap: 0.5rem 2.5rem; margin-top: 1rem; font-size: 1.2rem; }
+.cta__label { color: #a9d6d1; margin-right: 0.35rem; }
+
+/* Fußzeile */
+.site-footer { background: var(--farbe-primär-dunkel); color: #e7f1ef; margin-top: auto; }
+.site-footer__inner {
+  display: grid; gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding-block: 3rem 1.5rem;
+}
+.site-footer a { color: #ffd9c2; }
+.site-footer a:hover { color: #fff; }
+.site-footer__brand { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.site-footer__heading { font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.site-footer address { font-style: normal; margin-bottom: 0.75rem; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.site-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-block: 1.25rem; font-size: 0.95rem; color: #b9d4cf;
+}
+
+/* 6) Responsiv --------------------------------------------- */
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+
+  .nav-toggle {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: transparent; border: 1px solid var(--farbe-rahmen);
+    border-radius: var(--radius-klein); padding: 0.55rem 0.9rem;
+    color: var(--farbe-primär-dunkel); font-weight: 700; cursor: pointer;
+    order: 3;
+  }
+  .nav-toggle__label { font-size: 1rem; }
+
+  /* Navigation standardmäßig eingeklappt */
+  .site-nav {
+    order: 4; flex-basis: 100%;
+    display: none;
+  }
+  .site-nav.is-open { display: block; }
+  .site-nav__list { flex-direction: column; padding-bottom: 1rem; }
+  .site-nav a { padding: 0.85rem 0.75rem; border-radius: var(--radius-klein); }
+  .site-nav a[aria-current="page"] { box-shadow: inset 3px 0 0 var(--farbe-akzent); }
+}

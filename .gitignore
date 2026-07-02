@@ -1,0 +1,16 @@
+# Betriebssystem-Dateien
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor-/Tool-Ordner
+.vscode/
+.idea/
+
+# Abhängigkeiten / Build (falls später ein Framework dazukommt)
+node_modules/
+dist/
+.cache/
+
+# Logs
+*.log
