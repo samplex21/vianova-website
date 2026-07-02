@@ -272,9 +272,66 @@ a:hover { color: var(--farbe-akzent); }
   padding-block: 1.25rem; font-size: 0.95rem; color: #b9d4cf;
 }
 
+/* Seitenkopf (Unterseiten) */
+.page-head {
+  background: linear-gradient(180deg, var(--farbe-bg-alt), var(--farbe-bg));
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+.page-head__eyebrow {
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent);
+  margin-bottom: 0.5rem;
+}
+.page-head__lead { font-size: 1.2rem; color: var(--farbe-text-leise); max-width: 55ch; }
+
+/* Layout mit Sprungmenü (TOC) + Inhalt */
+.layout-toc {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+.toc {
+  position: sticky; top: 88px;
+  background: var(--farbe-bg-alt);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.toc__title { font-size: 1.1rem; margin: 0 0 0.75rem; }
+.toc__group {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--farbe-text-leise); font-weight: 700; margin: 1rem 0 0.35rem;
+}
+.toc ul { list-style: none; margin: 0 0 0.5rem; padding: 0; display: grid; gap: 0.15rem; }
+.toc a {
+  display: block; padding: 0.4rem 0.6rem; border-radius: var(--radius-klein);
+  text-decoration: none; color: var(--farbe-text); font-size: 0.98rem;
+}
+.toc a:hover { background: var(--farbe-bg); color: var(--farbe-primär-dunkel); }
+
+.offers__group-title {
+  margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--farbe-rahmen);
+}
+.offers__group-title:first-child { margin-top: 0; }
+.offer {
+  background: var(--farbe-bg);
+  border: 1px solid var(--farbe-rahmen);
+  border-left: 4px solid var(--farbe-primär);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 96px; /* damit Sprungziele nicht unter dem Sticky-Header landen */
+}
+.offer__title { margin-top: 0; color: var(--farbe-primär-dunkel); }
+.offer p:last-child { margin-bottom: 0; }
+
 /* 6) Responsiv --------------------------------------------- */
 @media (max-width: 860px) {
   .split { grid-template-columns: 1fr; }
+  .layout-toc { grid-template-columns: 1fr; }
+  .toc { position: static; }
 
   .nav-toggle {
     display: inline-flex; align-items: center; gap: 0.6rem;

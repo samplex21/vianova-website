@@ -6,7 +6,8 @@
       "Bash(git commit -q -m 'Startseite: barrierefreie Neufassung \\(HTML, CSS, JS\\) *)",
       "Bash(py --version)",
       "Bash(npx --version)",
-      "Bash(git commit -q -m 'Vorschau-Server einrichten \\(launch.json\\) *)"
+      "Bash(git commit -q -m 'Vorschau-Server einrichten \\(launch.json\\) *)",
+      "Bash(git commit -q -m 'Angebote-Detailseite mit Sprungmenue *)"
     ]
   }
 }
