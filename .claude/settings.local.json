@@ -20,7 +20,10 @@
       "mcp__visualize__read_me",
       "mcp__visualize__show_widget",
       "Bash(git mv *)",
-      "Bash(git commit -q -m 'Varianten-Struktur: aktuelle Version nach v1/ verschoben *)"
+      "Bash(git commit -q -m 'Varianten-Struktur: aktuelle Version nach v1/ verschoben *)",
+      "Bash(git -C \"C:/Users/Markus/test1\" add -A)",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'Variante v2: dunkles, redaktionelles Ein-Seiten-Design *)",
+      "Bash(git -C \"C:/Users/Markus/test1\" push)"
     ]
   }
 }
