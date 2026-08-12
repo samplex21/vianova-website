@@ -149,6 +149,18 @@
 :root[data-theme="gb"] .btn--primary { background: #ff0 !important; color: #0a1a3f !important; border-color: #ff0 !important; }
 :root[data-theme="gb"] .btn--ghost { background: #0a1a3f !important; color: #ff0 !important; border-color: #ff0 !important; }
 :root[data-theme="gb"] .a11y__btn[aria-pressed="true"] { background: #ff0 !important; color: #05102a !important; }
+/* Weiße Flächen im Gelb-Blau-Modus: BLAUE Schrift statt Gelb (Lesbarkeit) */
+:root[data-theme="gb"] .site-header,
+:root[data-theme="gb"] .card { background: #fff !important; border-color: #0a1a3f !important; }
+:root[data-theme="gb"] .site-header a,
+:root[data-theme="gb"] .site-header .brand__tag,
+:root[data-theme="gb"] .site-header .nav-toggle,
+:root[data-theme="gb"] .site-nav a,
+:root[data-theme="gb"] .card,
+:root[data-theme="gb"] .card *,
+:root[data-theme="gb"] .card__title,
+:root[data-theme="gb"] .card__text { color: #0a1a3f !important; }
+:root[data-theme="gb"] .site-nav a[aria-current="page"] { box-shadow: inset 0 -3px 0 #0a1a3f !important; }
 
 /* ---- 8) Responsiv ---------------------------------------- */
 @media (max-width: 860px) {

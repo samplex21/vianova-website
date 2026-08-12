@@ -33,7 +33,8 @@
       "Bash(python -)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: echtes Vereinslogo statt SVG-Textmarke *)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: kleinen Abstand zwischen Utility-Leiste und Logo ergaenzt *)",
-      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: Abstand zwischen Utility-Leiste und Logo deutlicher \\(1rem\\) *)"
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: Abstand zwischen Utility-Leiste und Logo deutlicher \\(1rem\\) *)",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: Gelb-Blau-Modus - blaue Schrift auf weissen Flaechen *)"
     ]
   }
 }
