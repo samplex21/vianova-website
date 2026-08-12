@@ -38,7 +38,7 @@
 .site-nav a .home-ic { width: 18px; height: 18px; vertical-align: -3px; margin-right: 0.4rem; }
 
 /* Kleiner Abstand zwischen Utility-Leiste (grüner Balken) und Logo */
-.utilbar + .site-header .site-header__inner { padding-top: 0.6rem; }
+.utilbar + .site-header .site-header__inner { padding-top: 1rem; }
 
 /* ---- 2) Wortfeld-Hero (ersetzt die alte Wortwolke) ------- */
 .hero--v4 .hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; }
