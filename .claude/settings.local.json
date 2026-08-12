@@ -29,7 +29,9 @@
       "PowerShell(Copy-Item \"$env:USERPROFILE\\\\.claude.json\" \"$env:USERPROFILE\\\\.claude.json.backup-vor-projekt-versuch\"; if \\(Test-Path \"$env:USERPROFILE\\\\.claude.json.backup-vor-projekt-versuch\"\\) { \"Sicherung angelegt: \" + \\(Get-Item \"$env:USERPROFILE\\\\.claude.json.backup-vor-projekt-versuch\"\\).Length + \" Bytes\" })",
       "Bash(cp -r \"C:/Users/Markus/test1/v1\" \"C:/Users/Markus/test1/v4\")",
       "Bash(cp -r \"C:/Users/Markus/test1/v2/assets/partner\" \"C:/Users/Markus/test1/v4/assets/partner\")",
-      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 1: Fundament + neue Startseite *)"
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 1: Fundament + neue Startseite *)",
+      "Bash(python -)",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: echtes Vereinslogo statt SVG-Textmarke *)"
     ]
   }
 }
