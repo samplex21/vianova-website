@@ -31,7 +31,8 @@
       "Bash(cp -r \"C:/Users/Markus/test1/v2/assets/partner\" \"C:/Users/Markus/test1/v4/assets/partner\")",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 1: Fundament + neue Startseite *)",
       "Bash(python -)",
-      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: echtes Vereinslogo statt SVG-Textmarke *)"
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: echtes Vereinslogo statt SVG-Textmarke *)",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: kleinen Abstand zwischen Utility-Leiste und Logo ergaenzt *)"
     ]
   }
 }
