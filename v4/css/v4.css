@@ -268,6 +268,38 @@
 :root[data-theme="gb"] .post-item { background: #fff !important; border-color: #0a1a3f !important; }
 :root[data-theme="gb"] .post-item, :root[data-theme="gb"] .post-item * { color: #0a1a3f !important; }
 
+/* Collage (Informationen als freie Kachel-Collage) */
+.collage { columns: 3 300px; column-gap: 1.5rem; margin-top: 2rem; }
+.collage__item { break-inside: avoid; display: block; margin: 0 0 1.5rem; text-decoration: none; color: inherit;
+  background: #fff; border: 1px solid var(--farbe-rahmen); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--schatten); transition: box-shadow .15s ease, transform .05s ease; }
+.collage__item:hover { box-shadow: var(--schatten-hover); }
+.collage__item:active { transform: translateY(1px); }
+.collage__item img { width: 100%; height: auto; display: block; }
+.collage__media { padding: 1.75rem 1.5rem; color: #fff; font-weight: 800; font-size: 1.35rem;
+  display: flex; align-items: center; min-height: 110px;
+  background: linear-gradient(135deg, var(--farbe-primär), var(--farbe-primär-dunkel)); }
+.collage__media--orange { background: linear-gradient(135deg, var(--farbe-akzent), #b5560f); }
+.collage__body { padding: 1.1rem 1.35rem 1.35rem; }
+.collage__cat { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--farbe-akzent-dunkel); }
+.collage__title { font-size: 1.15rem; font-weight: 700; color: var(--farbe-primär-dunkel); margin: 0.2rem 0 0.4rem; }
+.collage__text { color: var(--farbe-text-leise); margin: 0; font-size: 0.97rem; }
+.collage__more { display: inline-block; margin-top: 0.6rem; font-weight: 700; color: var(--farbe-primär-dunkel); }
+.collage__more::after { content: " →"; }
+@media (max-width: 640px) { .collage { columns: 1; } }
+
+:root[data-theme="gb"] .collage__item { background: #fff !important; border-color: #0a1a3f !important; }
+:root[data-theme="gb"] .collage__body, :root[data-theme="gb"] .collage__body * { color: #0a1a3f !important; }
+
+/* Beitrags-Detailseite */
+.article { max-width: 760px; }
+.article__date { color: var(--farbe-text-leise); font-weight: 600; }
+.article__media { margin: 0 0 1.5rem; }
+.article__media img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--schatten); }
+.article__media figcaption { font-size: 0.9rem; color: var(--farbe-text-leise); margin-top: 0.5rem; }
+.article__media--two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 560px) { .article__media--two { grid-template-columns: 1fr; } }
+
 /* ---- 8) Responsiv ---------------------------------------- */
 @media (max-width: 860px) {
   .hero--v4 .hero__inner { grid-template-columns: 1fr; }
