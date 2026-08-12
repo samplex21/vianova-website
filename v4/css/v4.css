@@ -1,0 +1,155 @@
+/* =========================================================
+   Vianova – Variante v4  ·  Ergänzungen zum v1-Grunddesign
+   Enthält: Barrierefreiheits-Leiste (Schrift + Kontrast-Themes),
+   Kopfzeile mit Instagram, Wortfeld-Hero, Recruiting-Teaser,
+   Fördergeber-Streifen, Cookie-Hinweis.
+   Basis-Farben & Komponenten kommen aus styles.css.
+   ========================================================= */
+
+/* ---- 1) Utility-Leiste (Barrierefreiheit + Instagram) ---- */
+.utilbar {
+  background: var(--farbe-primär-dunkel);
+  color: #fff;
+  font-size: 0.9rem;
+}
+.utilbar__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; min-height: 44px; flex-wrap: wrap; padding-block: 0.35rem;
+}
+.a11y { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.a11y__group { display: flex; align-items: center; gap: 0.4rem; }
+.a11y__label { font-weight: 700; }
+.a11y__btn {
+  min-width: 40px; min-height: 34px; cursor: pointer;
+  background: transparent; color: #fff;
+  border: 1px solid rgba(255,255,255,0.5); border-radius: 6px;
+  font-weight: 700; font-size: 0.9rem; padding: 0.2rem 0.6rem;
+}
+.a11y__btn:hover { background: rgba(255,255,255,0.15); }
+.a11y__btn[aria-pressed="true"] { background: #fff; color: var(--farbe-primär-dunkel); }
+.utilbar__ig {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  color: #fff; text-decoration: none; font-weight: 700;
+}
+.utilbar__ig:hover { color: #fff; text-decoration: underline; }
+.utilbar__ig svg { width: 20px; height: 20px; }
+
+/* Home-Symbol im Menü */
+.site-nav a .home-ic { width: 18px; height: 18px; vertical-align: -3px; margin-right: 0.4rem; }
+
+/* ---- 2) Wortfeld-Hero (ersetzt die alte Wortwolke) ------- */
+.hero--v4 .hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; }
+.wordfield {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; align-content: center;
+  background: var(--farbe-bg-alt); border: 1px solid var(--farbe-rahmen);
+  border-radius: 20px; padding: 1.75rem;
+}
+.wordfield span { font-weight: 700; line-height: 1.1; }
+.wordfield .w-lg { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.wordfield .w-md { font-size: clamp(1.1rem, 2.2vw, 1.5rem); }
+.wordfield .w-sm { font-size: clamp(0.95rem, 1.6vw, 1.15rem); }
+.wordfield .c-green { color: var(--farbe-primär); }
+.wordfield .c-orange { color: var(--farbe-akzent-dunkel); }
+.wordfield .c-dark { color: var(--farbe-primär-dunkel); }
+.photo-hint {
+  margin-top: 0.75rem; font-size: 0.85rem; color: var(--farbe-text-leise);
+  font-style: italic;
+}
+
+/* ---- 3) Recruiting-Teaser (Mitarbeiten) ----------------- */
+.recruit {
+  background: linear-gradient(120deg, var(--farbe-primär-dunkel), var(--farbe-primär));
+  color: #fff;
+}
+.recruit h2 { color: #fff; }
+.recruit__inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; }
+.recruit p { color: #eaf3ec; font-size: 1.15rem; }
+.recruit .btn--primary { background: var(--farbe-akzent); color: #1a1108; }
+.recruit .btn--primary:hover { background: #ffa860; color: #1a1108; }
+.recruit__badge {
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 16px; padding: 1.5rem; text-align: center;
+}
+.recruit__badge strong { display: block; font-size: 2.5rem; font-weight: 800; }
+
+/* ---- 4) Fördergeber-Streifen (Startseite) --------------- */
+.foerder { text-align: center; }
+.foerder__logos {
+  list-style: none; margin: 1.5rem 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem 2rem;
+}
+.foerder__logos li {
+  background: #fff; border: 1px solid var(--farbe-rahmen); border-radius: 12px;
+  padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: center;
+  min-height: 84px; min-width: 130px;
+}
+.foerder__logos img { max-height: 52px; width: auto; object-fit: contain; }
+
+/* ---- 5) Instagram-Teaser -------------------------------- */
+.ig-teaser { text-align: center; }
+.ig-teaser .btn { margin-top: 0.75rem; }
+
+/* ---- 6) Cookie-Hinweis ---------------------------------- */
+.cookie {
+  position: fixed; inset: auto 1rem 1rem 1rem; z-index: 300;
+  max-width: 620px; margin-inline: auto;
+  background: #fff; color: var(--farbe-text);
+  border: 2px solid var(--farbe-primär-dunkel); border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25); padding: 1.25rem 1.5rem;
+}
+.cookie[hidden] { display: none; }
+.cookie h2 { font-size: 1.2rem; margin: 0 0 0.5rem; }
+.cookie p { margin: 0 0 1rem; font-size: 0.98rem; }
+.cookie__actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.cookie__actions .btn { font-size: 0.98rem; padding: 0.6rem 1.1rem; }
+
+/* ---- 7) Kontrast-Themes (Barrierefreiheit) -------------- */
+/* Schwarz-Weiß: maximaler Kontrast */
+:root[data-theme="sw"] body,
+:root[data-theme="sw"] .section--alt,
+:root[data-theme="sw"] .hero,
+:root[data-theme="sw"] .wordfield,
+:root[data-theme="sw"] .cta,
+:root[data-theme="sw"] .recruit,
+:root[data-theme="sw"] .foerder__logos li,
+:root[data-theme="sw"] .cookie,
+:root[data-theme="sw"] .site-footer { background: #fff !important; color: #000 !important; }
+:root[data-theme="sw"] .utilbar { background: #000 !important; color: #fff !important; }
+:root[data-theme="sw"] a,
+:root[data-theme="sw"] h1, :root[data-theme="sw"] h2, :root[data-theme="sw"] h3,
+:root[data-theme="sw"] .hero__eyebrow, :root[data-theme="sw"] .page-head__eyebrow { color: #000 !important; }
+:root[data-theme="sw"] a { text-decoration: underline; }
+:root[data-theme="sw"] *:not(.utilbar):not(.utilbar *) { border-color: #000 !important; }
+:root[data-theme="sw"] .btn--primary { background: #000 !important; color: #fff !important; }
+:root[data-theme="sw"] .btn--ghost { background: #fff !important; color: #000 !important; border-color: #000 !important; }
+:root[data-theme="sw"] .recruit p, :root[data-theme="sw"] .cta p, :root[data-theme="sw"] .site-footer address { color: #000 !important; }
+
+/* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
+:root[data-theme="gb"] body,
+:root[data-theme="gb"] .section--alt,
+:root[data-theme="gb"] .hero,
+:root[data-theme="gb"] .wordfield,
+:root[data-theme="gb"] .cta,
+:root[data-theme="gb"] .recruit,
+:root[data-theme="gb"] .cookie,
+:root[data-theme="gb"] .site-footer { background: #0a1a3f !important; color: #ff0 !important; }
+:root[data-theme="gb"] .utilbar { background: #05102a !important; color: #ff0 !important; }
+:root[data-theme="gb"] .foerder__logos li { background: #fff !important; } /* Logos bleiben lesbar */
+:root[data-theme="gb"] a,
+:root[data-theme="gb"] h1, :root[data-theme="gb"] h2, :root[data-theme="gb"] h3,
+:root[data-theme="gb"] .hero__eyebrow, :root[data-theme="gb"] .page-head__eyebrow,
+:root[data-theme="gb"] .recruit p, :root[data-theme="gb"] .cta p,
+:root[data-theme="gb"] .site-footer address, :root[data-theme="gb"] p, :root[data-theme="gb"] li,
+:root[data-theme="gb"] dt, :root[data-theme="gb"] dd { color: #ff0 !important; }
+:root[data-theme="gb"] a { text-decoration: underline; }
+:root[data-theme="gb"] * { border-color: #ff0 !important; }
+:root[data-theme="gb"] .btn--primary { background: #ff0 !important; color: #0a1a3f !important; border-color: #ff0 !important; }
+:root[data-theme="gb"] .btn--ghost { background: #0a1a3f !important; color: #ff0 !important; border-color: #ff0 !important; }
+:root[data-theme="gb"] .a11y__btn[aria-pressed="true"] { background: #ff0 !important; color: #05102a !important; }
+
+/* ---- 8) Responsiv ---------------------------------------- */
+@media (max-width: 860px) {
+  .hero--v4 .hero__inner { grid-template-columns: 1fr; }
+  .recruit__inner { grid-template-columns: 1fr; }
+  .a11y { gap: 0.75rem; }
+}

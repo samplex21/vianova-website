@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Elternverein Vianova</title>
+  <meta name="description" content="Kontakt zum Elternverein Vianova in Reutte, Tirol: Adresse, Telefon, E-Mail, Öffnungszeiten und Kontaktformular.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Elternverein Vianova – zur Startseite">
+        <img class="brand__logo" src="assets/vianova-logo.svg" alt="" width="158" height="40">
+        <span class="brand__text">
+          <span class="brand__tag">Elternverein</span>
+        </span>
+      </a>
+      <div class="text-size" role="group" aria-label="Schriftgröße anpassen">
+        <button type="button" class="text-size__btn" data-size="decrease" aria-label="Schrift verkleinern">A−</button>
+        <button type="button" class="text-size__btn" data-size="reset" aria-label="Schriftgröße zurücksetzen">A</button>
+        <button type="button" class="text-size__btn text-size__btn--lg" data-size="increase" aria-label="Schrift vergrößern">A+</button>
+      </div>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="hauptnavigation">
+        <span class="nav-toggle__box" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menü</span>
+      </button>
+      <nav id="hauptnavigation" class="site-nav" aria-label="Hauptnavigation">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebote.html">Angebote</a></li>
+          <li><a href="partner.html">Partner:innen</a></li>
+          <li><a href="aktuelles.html">Aktuelles</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="hauptinhalt">
+    <section class="page-head" aria-labelledby="seiten-titel">
+      <div class="container">
+        <p class="page-head__eyebrow">Wir sind für Sie da</p>
+        <h1 id="seiten-titel">Kontakt</h1>
+        <p class="page-head__lead">
+          Haben Sie Fragen oder brauchen Sie Unterstützung? Rufen Sie uns an,
+          schreiben Sie eine E-Mail oder nutzen Sie das Kontaktformular.
+        </p>
+      </div>
+    </section>
+
+    <div class="container split-contact">
+      <!-- Kontaktdaten -->
+      <section aria-labelledby="daten-titel">
+        <h2 id="daten-titel">So erreichen Sie uns</h2>
+        <dl class="contact-list">
+          <div class="contact-list__item">
+            <dt>Adresse</dt>
+            <dd>
+              <address>
+                Elternverein Vianova<br>
+                Planseestraße 13<br>
+                6600 Reutte, Österreich
+              </address>
+            </dd>
+          </div>
+          <div class="contact-list__item">
+            <dt>Telefon</dt>
+            <dd><a href="tel:+43567262486">+43 5672 62486</a></dd>
+          </div>
+          <div class="contact-list__item">
+            <dt>E-Mail</dt>
+            <dd><a href="mailto:office@vianova-austria.at">office@vianova-austria.at</a></dd>
+          </div>
+          <div class="contact-list__item">
+            <dt>Öffnungszeiten Büro</dt>
+            <dd>Montag bis Freitag, 9–13 Uhr<br>oder nach telefonischer Vereinbarung</dd>
+          </div>
+        </dl>
+
+        <p class="map-link">
+          <a class="btn btn--ghost" href="https://www.openstreetmap.org/search?query=Planseestra%C3%9Fe%2013%2C%206600%20Reutte"
+             target="_blank" rel="noopener">
+            Auf der Karte ansehen (öffnet neues Fenster)
+          </a>
+        </p>
+      </section>
+
+      <!-- Kontaktformular -->
+      <section aria-labelledby="formular-titel">
+        <h2 id="formular-titel">Schreiben Sie uns</h2>
+        <p class="form-note">
+          Mit <span aria-hidden="true">*</span> markierte Felder sind Pflichtfelder.
+        </p>
+
+        <!--
+          Hinweis: Diese Seite ist statisch (ohne Server). Damit das Formular
+          E-Mails verschicken kann, muss im action-Attribut ein Formular-Dienst
+          (z. B. Formspree) oder eine serverseitige Adresse eingetragen werden.
+          Bis dahin funktioniert der direkte Weg per Telefon/E-Mail oben.
+        -->
+        <form class="form" action="#" method="post" novalidate>
+          <div class="form__row">
+            <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form__row">
+            <label for="email">E-Mail <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form__row">
+            <label for="telefon">Telefon <span class="optional">(optional)</span></label>
+            <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+          </div>
+          <div class="form__row">
+            <label for="nachricht">Ihre Nachricht <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="nachricht" name="nachricht" rows="6" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Nachricht senden</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__col">
+        <p class="site-footer__brand">Elternverein Vianova</p>
+        <address>
+          Planseestraße 13<br>
+          6600 Reutte, Österreich<br>
+          Tel.: <a href="tel:+43567262486">+43 5672 62486</a><br>
+          E-Mail: <a href="mailto:office@vianova-austria.at">office@vianova-austria.at</a>
+        </address>
+        <p>Büro: Montag bis Freitag, 9–13 Uhr (oder nach Vereinbarung)</p>
+      </div>
+      <nav class="site-footer__col" aria-label="Fußzeile">
+        <p class="site-footer__heading">Rechtliches</p>
+        <ul role="list">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span id="jahr">2026</span> Elternverein Vianova · ZVR 248306176</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

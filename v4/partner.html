@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner:innen – Elternverein Vianova</title>
+  <meta name="description" content="Fördergeber sowie regionale und Systempartner:innen des Elternvereins Vianova.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Elternverein Vianova – zur Startseite">
+        <img class="brand__logo" src="assets/vianova-logo.svg" alt="" width="158" height="40">
+        <span class="brand__text">
+          <span class="brand__tag">Elternverein</span>
+        </span>
+      </a>
+      <div class="text-size" role="group" aria-label="Schriftgröße anpassen">
+        <button type="button" class="text-size__btn" data-size="decrease" aria-label="Schrift verkleinern">A−</button>
+        <button type="button" class="text-size__btn" data-size="reset" aria-label="Schriftgröße zurücksetzen">A</button>
+        <button type="button" class="text-size__btn text-size__btn--lg" data-size="increase" aria-label="Schrift vergrößern">A+</button>
+      </div>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="hauptnavigation">
+        <span class="nav-toggle__box" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menü</span>
+      </button>
+      <nav id="hauptnavigation" class="site-nav" aria-label="Hauptnavigation">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebote.html">Angebote</a></li>
+          <li><a href="partner.html" aria-current="page">Partner:innen</a></li>
+          <li><a href="aktuelles.html">Aktuelles</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="hauptinhalt">
+    <section class="page-head" aria-labelledby="seiten-titel">
+      <div class="container">
+        <p class="page-head__eyebrow">Gemeinsam stark</p>
+        <h1 id="seiten-titel">Unsere Partner:innen</h1>
+        <p class="page-head__lead">
+          Unsere Arbeit wird durch Fördergeber sowie regionale und
+          Systempartner:innen möglich gemacht. Ihnen gilt unser Dank.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="foerder-titel">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="foerder-titel">Fördergeber &amp; Systempartner:innen</h2>
+        </div>
+        <ul class="partners" role="list">
+          <li class="partner">Bundesministerium für Soziales (Sozialministerium­service)</li>
+          <li class="partner">Bundeskanzleramt (BKA)</li>
+          <li class="partner">Land Tirol</li>
+          <li class="partner">NEBA – Netzwerk berufliche Assistenz</li>
+          <li class="partner">Familienberatung (BKA-gefördert)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="hinweis-titel">
+      <div class="container prose">
+        <h2 id="hinweis-titel">Sie möchten kooperieren?</h2>
+        <p>
+          Wir arbeiten eng mit Betrieben, Institutionen und Partner:innen aus der
+          Region zusammen. Wenn Sie mit uns zusammenarbeiten möchten, freuen wir
+          uns über Ihre Kontaktaufnahme.
+        </p>
+        <p><a class="btn btn--primary" href="kontakt.html">Kontakt aufnehmen</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__col">
+        <p class="site-footer__brand">Elternverein Vianova</p>
+        <address>
+          Planseestraße 13<br>
+          6600 Reutte, Österreich<br>
+          Tel.: <a href="tel:+43567262486">+43 5672 62486</a><br>
+          E-Mail: <a href="mailto:office@vianova-austria.at">office@vianova-austria.at</a>
+        </address>
+        <p>Büro: Montag bis Freitag, 9–13 Uhr (oder nach Vereinbarung)</p>
+      </div>
+      <nav class="site-footer__col" aria-label="Fußzeile">
+        <p class="site-footer__heading">Rechtliches</p>
+        <ul role="list">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span id="jahr">2026</span> Elternverein Vianova · ZVR 248306176</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

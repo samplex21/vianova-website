@@ -24,7 +24,12 @@
       "Bash(git -C \"C:/Users/Markus/test1\" add -A)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'Variante v2: dunkles, redaktionelles Ein-Seiten-Design *)",
       "Bash(git -C \"C:/Users/Markus/test1\" push)",
-      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'Variante v3: helle Fassung des redaktionellen v2-Designs *)"
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'Variante v3: helle Fassung des redaktionellen v2-Designs *)",
+      "WebSearch",
+      "PowerShell(Copy-Item \"$env:USERPROFILE\\\\.claude.json\" \"$env:USERPROFILE\\\\.claude.json.backup-vor-projekt-versuch\"; if \\(Test-Path \"$env:USERPROFILE\\\\.claude.json.backup-vor-projekt-versuch\"\\) { \"Sicherung angelegt: \" + \\(Get-Item \"$env:USERPROFILE\\\\.claude.json.backup-vor-projekt-versuch\"\\).Length + \" Bytes\" })",
+      "Bash(cp -r \"C:/Users/Markus/test1/v1\" \"C:/Users/Markus/test1/v4\")",
+      "Bash(cp -r \"C:/Users/Markus/test1/v2/assets/partner\" \"C:/Users/Markus/test1/v4/assets/partner\")",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 1: Fundament + neue Startseite *)"
     ]
   }
 }
