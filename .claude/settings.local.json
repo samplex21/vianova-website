@@ -35,7 +35,12 @@
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: kleinen Abstand zwischen Utility-Leiste und Logo ergaenzt *)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: Abstand zwischen Utility-Leiste und Logo deutlicher \\(1rem\\) *)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: Gelb-Blau-Modus - blaue Schrift auf weissen Flaechen *)",
-      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 2: Das sind wir + Unsere Angebote *)"
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 2: Das sind wir + Unsere Angebote *)",
+      "Bash(mkdir -p \"C:/Users/Markus/test1/v4/assets/team\")",
+      "Bash(curl -s -L -o vorstand.jpg -w \"%{http_code}\" \"https://vianova-austria.at/wp-content/uploads/2018/01/IMG_2784-2-683x1024.jpg\")",
+      "Bash(xxd)",
+      "Bash(python -c \"import struct;d=open\\('vorstand.jpg','rb'\\).read\\(\\);print\\('JPEG ok' if d[:2]==b'\\\\xff\\\\xd8' else 'KEIN JPEG'\\)\")",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 3: Mitarbeiten + Das-sind-wir-Aktualisierung *)"
     ]
   }
 }
