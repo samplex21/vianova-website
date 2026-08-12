@@ -109,6 +109,7 @@
 /* ---- 7) Kontrast-Themes (Barrierefreiheit) -------------- */
 /* Schwarz-Weiß: maximaler Kontrast */
 :root[data-theme="sw"] body,
+:root[data-theme="sw"] .page-head,
 :root[data-theme="sw"] .section--alt,
 :root[data-theme="sw"] .hero,
 :root[data-theme="sw"] .wordfield,
@@ -129,6 +130,7 @@
 
 /* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
 :root[data-theme="gb"] body,
+:root[data-theme="gb"] .page-head,
 :root[data-theme="gb"] .section--alt,
 :root[data-theme="gb"] .hero,
 :root[data-theme="gb"] .wordfield,
@@ -161,6 +163,43 @@
 :root[data-theme="gb"] .card__title,
 :root[data-theme="gb"] .card__text { color: #0a1a3f !important; }
 :root[data-theme="gb"] .site-nav a[aria-current="page"] { box-shadow: inset 0 -3px 0 #0a1a3f !important; }
+
+/* ---- 8b) Platzhalter-Bilder, Angebots-Logos, Team -------- */
+.ph-img {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  background: linear-gradient(135deg, var(--farbe-bg-alt), #ffffff);
+  border: 1px dashed var(--farbe-primär); border-radius: var(--radius);
+  color: var(--farbe-text-leise); font-size: 0.9rem; padding: 1.25rem; min-height: 220px;
+}
+.ph-img span { max-width: 28ch; }
+.ph-img strong { color: var(--farbe-primär-dunkel); display: block; margin-bottom: 0.25rem; }
+
+.offer__foerder {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;
+  margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--farbe-rahmen);
+}
+.offer__foerder .lbl {
+  width: 100%; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--farbe-text-leise); font-weight: 700;
+}
+.offer__foerder img {
+  max-height: 46px; width: auto; background: #fff;
+  border: 1px solid var(--farbe-rahmen); border-radius: 8px; padding: 0.4rem 0.6rem;
+}
+
+.team-block { margin-top: 1.5rem; }
+.team-block h3 { color: var(--farbe-primär-dunkel); margin-bottom: 0.35rem; }
+.team-block p { color: var(--farbe-text-leise); margin: 0; }
+
+/* Gelb-Blau: weitere weiße Flächen -> blaue Schrift */
+:root[data-theme="gb"] .offer,
+:root[data-theme="gb"] .person,
+:root[data-theme="gb"] .facts,
+:root[data-theme="gb"] .toc { background: #fff !important; border-color: #0a1a3f !important; }
+:root[data-theme="gb"] .offer, :root[data-theme="gb"] .offer *,
+:root[data-theme="gb"] .person, :root[data-theme="gb"] .person *,
+:root[data-theme="gb"] .facts, :root[data-theme="gb"] .facts *,
+:root[data-theme="gb"] .toc, :root[data-theme="gb"] .toc * { color: #0a1a3f !important; }
 
 /* ---- 8) Responsiv ---------------------------------------- */
 @media (max-width: 860px) {
