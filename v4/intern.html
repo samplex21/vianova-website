@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Elternverein Vianova</title>
-  <meta name="description" content="Kontakt zum Elternverein Vianova in Reutte, Tirol: Adresse, Telefon, E-Mail, Öffnungszeiten und Kontaktformular.">
+  <title>Intern – Elternverein Vianova</title>
+  <meta name="description" content="Geschützter interner Bereich des Elternvereins Vianova.">
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -52,8 +53,8 @@
           <li><a href="unsere-angebote.html">Unsere Angebote</a></li>
           <li><a href="mitarbeiten.html">Mitarbeiten</a></li>
           <li><a href="informationen.html">Informationen</a></li>
-          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
-          <li><a href="intern.html">Intern</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="intern.html" aria-current="page">Intern</a></li>
         </ul>
       </nav>
     </div>
@@ -62,73 +63,64 @@
   <main id="hauptinhalt">
     <section class="page-head" aria-labelledby="seiten-titel">
       <div class="container">
-        <p class="page-head__eyebrow">Wir sind für Sie da</p>
-        <h1 id="seiten-titel">Kontakt</h1>
+        <p class="page-head__eyebrow">Geschützter Bereich</p>
+        <h1 id="seiten-titel">Intern</h1>
         <p class="page-head__lead">
-          Haben Sie Fragen oder brauchen Sie Unterstützung? Rufen Sie an, schreiben
-          Sie eine E-Mail oder nutzen Sie das Kontaktformular.
+          Dieser Bereich ist nur für Mitarbeiter:innen zugänglich. Bitte melden Sie
+          sich mit dem internen Passwort an.
         </p>
       </div>
     </section>
 
-    <div class="container split-contact">
-      <section aria-labelledby="daten-titel">
-        <h2 id="daten-titel">So erreichen Sie uns</h2>
-        <dl class="contact-list">
-          <div class="contact-list__item">
-            <dt>Adresse</dt>
-            <dd><address>Elternverein Vianova<br>Planseestraße 13<br>6600 Reutte, Österreich</address></dd>
+    <!-- Login -->
+    <section class="section" id="intern-login-box" aria-labelledby="login-titel">
+      <div class="container login">
+        <h2 id="login-titel">Anmeldung</h2>
+        <div class="note-box">
+          <strong>Prototyp-Hinweis:</strong> Dieser Passwortschutz läuft nur im
+          Browser und ist <em>kein echter Zugriffsschutz</em>. Für einen sicheren
+          Intern-Bereich brauchen wir später eine serverseitige Lösung.
+        </div>
+        <form id="intern-login">
+          <div class="login__row">
+            <label for="pw">Passwort</label>
+            <input type="password" id="pw" name="pw" autocomplete="off" required>
           </div>
-          <div class="contact-list__item">
-            <dt>Telefon</dt>
-            <dd><a href="tel:+43567262486">+43 5672 62486</a> <span style="color:var(--farbe-text-leise)">(am Handy tippen zum Anrufen)</span></dd>
-          </div>
-          <div class="contact-list__item">
-            <dt>E-Mail</dt>
-            <dd><a href="mailto:office@vianova-austria.at">office@vianova-austria.at</a></dd>
-          </div>
-          <div class="contact-list__item">
-            <dt>Öffnungszeiten Büro</dt>
-            <dd>Montag bis Freitag, 9–13 Uhr<br>oder nach telefonischer Vereinbarung</dd>
-          </div>
-        </dl>
-        <p class="map-link">
-          <a class="btn btn--ghost" href="https://www.openstreetmap.org/search?query=Planseestra%C3%9Fe%2013%2C%206600%20Reutte" target="_blank" rel="noopener">
-            Auf der Karte ansehen <span class="visually-hidden">(öffnet neues Fenster)</span>
-          </a>
-        </p>
-      </section>
-
-      <section aria-labelledby="formular-titel">
-        <h2 id="formular-titel">Schreiben Sie uns</h2>
-        <p class="form-note">Mit <span aria-hidden="true">*</span> markierte Felder sind Pflichtfelder.</p>
-        <!--
-          Hinweis: statische Seite ohne Server. Damit das Formular E-Mails
-          verschickt, muss im action-Attribut ein Formular-Dienst (z. B. Formspree)
-          oder eine serverseitige Adresse eingetragen werden. Bis dahin funktioniert
-          der direkte Weg per Telefon/E-Mail oben.
-        -->
-        <form class="form" action="#" method="post" novalidate>
-          <div class="form__row">
-            <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-          </div>
-          <div class="form__row">
-            <label for="email">E-Mail <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-          </div>
-          <div class="form__row">
-            <label for="telefon">Telefon <span class="optional">(optional)</span></label>
-            <input type="tel" id="telefon" name="telefon" autocomplete="tel">
-          </div>
-          <div class="form__row">
-            <label for="nachricht">Ihre Nachricht <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="nachricht" name="nachricht" rows="6" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary">Nachricht senden</button>
+          <p id="pw-error" class="login__error" role="alert" hidden>Das Passwort ist nicht korrekt. Bitte erneut versuchen.</p>
+          <button type="submit" class="btn btn--primary">Anmelden</button>
         </form>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <!-- Geschützter Inhalt -->
+    <section class="section" id="intern-content" aria-labelledby="dl-titel" hidden>
+      <div class="container">
+        <h2 id="dl-titel">Dokumente zum Download</h2>
+        <p class="section__intro">
+          Willkommen im internen Bereich. Hier finden Sie interne Dokumente und
+          Vorlagen. <em>(Die folgenden Dateien sind Beispiel-Platzhalter für den
+          Prototyp und werden später durch die echten Dokumente ersetzt.)</em>
+        </p>
+        <ul class="dl-list" role="list">
+          <li class="dl-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>
+            <a class="dl-item__name" href="assets/intern/dienstplan-vorlage.pdf" download>Dienstplan-Vorlage</a>
+            <span class="dl-item__meta">PDF</span>
+          </li>
+          <li class="dl-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>
+            <a class="dl-item__name" href="assets/intern/spesenabrechnung-formular.pdf" download>Spesenabrechnung – Formular</a>
+            <span class="dl-item__meta">PDF</span>
+          </li>
+          <li class="dl-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M5 21h14"/></svg>
+            <a class="dl-item__name" href="assets/intern/protokoll-teambesprechung.pdf" download>Protokoll Teambesprechung</a>
+            <span class="dl-item__meta">PDF</span>
+          </li>
+        </ul>
+        <p style="margin-top:1.5rem"><button type="button" class="btn btn--ghost" id="intern-logout">Abmelden</button></p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -172,5 +164,33 @@
   </div>
 
   <script src="js/app.js"></script>
+  <script>
+    /* Prototyp-Login (nur clientseitig, KEIN echter Schutz) */
+    (function () {
+      var PW = "ViaNova2026";
+      var form = document.getElementById("intern-login");
+      var loginBox = document.getElementById("intern-login-box");
+      var content = document.getElementById("intern-content");
+      var err = document.getElementById("pw-error");
+      var pw = document.getElementById("pw");
+      function unlock() { loginBox.hidden = true; content.hidden = false; }
+      function lock() { content.hidden = true; loginBox.hidden = false; pw.value = ""; }
+      try { if (sessionStorage.getItem("vianova-intern") === "1") unlock(); } catch (e) {}
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (pw.value === PW) {
+          try { sessionStorage.setItem("vianova-intern", "1"); } catch (e) {}
+          err.hidden = true; unlock();
+        } else {
+          err.hidden = false; pw.select();
+        }
+      });
+      var logout = document.getElementById("intern-logout");
+      if (logout) logout.addEventListener("click", function () {
+        try { sessionStorage.removeItem("vianova-intern"); } catch (e) {}
+        lock(); pw.focus();
+      });
+    })();
+  </script>
 </body>
 </html>

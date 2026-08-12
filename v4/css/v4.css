@@ -291,6 +291,32 @@
 :root[data-theme="gb"] .collage__item { background: #fff !important; border-color: #0a1a3f !important; }
 :root[data-theme="gb"] .collage__body, :root[data-theme="gb"] .collage__body * { color: #0a1a3f !important; }
 
+/* Login (Intern) + Downloads */
+.login { max-width: 440px; }
+.login__row { display: grid; gap: 0.35rem; margin-bottom: 1rem; }
+.login label { font-weight: 700; color: var(--farbe-primär-dunkel); }
+.login input { font: inherit; padding: 0.7rem 0.85rem; border: 2px solid var(--farbe-rahmen);
+  border-radius: 8px; background: #fff; color: var(--farbe-text); }
+.login input:focus-visible { outline: 3px solid var(--farbe-fokus); border-color: var(--farbe-primär); }
+.login__error { color: #b00020; font-weight: 700; }
+.note-box { background: #fff4ec; border: 1px solid #f0c7a8; border-left: 4px solid var(--farbe-akzent);
+  border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+
+.dl-list { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 0.85rem; max-width: 640px; }
+.dl-item { display: flex; align-items: center; gap: 1rem; background: #fff; border: 1px solid var(--farbe-rahmen);
+  border-left: 4px solid var(--farbe-primär); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.dl-item svg { flex-shrink: 0; color: var(--farbe-primär); }
+.dl-item__name { font-weight: 700; color: var(--farbe-primär-dunkel); text-decoration: none; }
+.dl-item__name:hover { text-decoration: underline; }
+.dl-item__meta { margin-left: auto; color: var(--farbe-text-leise); font-size: 0.85rem; white-space: nowrap; }
+
+:root[data-theme="gb"] .login input,
+:root[data-theme="gb"] .form input,
+:root[data-theme="gb"] .form textarea,
+:root[data-theme="gb"] .dl-item { background: #fff !important; color: #0a1a3f !important; border-color: #0a1a3f !important; }
+:root[data-theme="gb"] .dl-item, :root[data-theme="gb"] .dl-item * { color: #0a1a3f !important; }
+:root[data-theme="gb"] .contact-list__item { border-color: #ff0 !important; }
+
 /* Beitrags-Detailseite */
 .article { max-width: 760px; }
 .article__date { color: var(--farbe-text-leise); font-weight: 600; }
