@@ -47,7 +47,8 @@
       "Bash(python \"C:/Users/Markus/AppData/Local/Temp/claude/C--Users-Markus-test1/ae44a07c-9399-436e-ade6-5d0dec4b5f10/scratchpad/gen_pdfs.py\")",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 5: Kontakt \\(neu\\) + Intern \\(Passwort + Downloads\\) *)",
       "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Phase 6: Rechtsseiten + Impressum/Datenschutz im neuen Look *)",
-      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Unsere Angebote: '\\\\''Finanziert von'\\\\'' -> '\\\\''Unterstuetzt von'\\\\'' *)"
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4 Unsere Angebote: '\\\\''Finanziert von'\\\\'' -> '\\\\''Unterstuetzt von'\\\\'' *)",
+      "Bash(git -C C:/Users/Markus/test1 commit -q -m 'v4: Favicon der Vereins-Website eingebunden + Altlasten entfernt *)"
     ]
   }
 }
