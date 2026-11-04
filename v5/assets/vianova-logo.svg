@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 70" role="img" aria-label="Vianova">
+  <style>
+    .wm { font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif; font-weight: 800; font-size: 46px; letter-spacing: 3px; }
+  </style>
+  <!-- Wortmarke: VIA in Orange, NOVA in Grün -->
+  <text x="6" y="53" class="wm">
+    <tspan fill="#e5822e">V</tspan><tspan id="glyph-i" fill="#e5822e">I</tspan><tspan fill="#e5822e">A</tspan><tspan fill="#3e9b4d">NOVA</tspan>
+  </text>
+  <!-- Raute über dem I (Position wird nach Messung feinjustiert) -->
+  <rect id="dot" x="50.2" y="6" width="10" height="10" fill="#3e9b4d" transform="rotate(45 55.2 11)"/>
+</svg>
