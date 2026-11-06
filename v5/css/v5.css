@@ -240,6 +240,43 @@
 .facts__liste dd a { color: var(--farbe-primär-dunkel); }
 .facts__mail { font-size: 1rem; word-break: break-word; }
 
+/* ---- Team-Variante mit Portraets ------------------------- */
+.platzhalter-hinweis {
+  margin: 0 0 1.5rem; padding: 0.75rem 1rem;
+  border-left: 4px solid var(--farbe-akzent);
+  background: #fff; border-radius: var(--radius-klein);
+  color: var(--farbe-text-leise); font-size: 0.95rem;
+}
+.portraet {
+  border-radius: 50%; flex-shrink: 0;
+  width: 72px; height: 72px; object-fit: cover;
+  background: var(--farbe-bg-alt);
+}
+.portraet--klein { width: 48px; height: 48px; }
+/* Im Schwarz-Weiss-Modus auch die Portraets entsaettigen */
+:root[data-theme="sw"] .portraet { filter: grayscale(1) contrast(1.15); }
+
+/* Leitungs-Kachel: Portraet oben, Angaben darunter - so bleibt die volle
+   Kachelbreite fuer lange E-Mail-Adressen */
+.person--foto { display: block; }
+.person--foto .portraet { margin-bottom: 0.85rem; }
+
+/* Namenslisten: Portraet links neben Name und Adresse */
+.staff--foto li {
+  display: grid; grid-template-columns: auto 1fr; gap: 0 0.75rem;
+  align-items: center;
+}
+.staff--foto li .portraet { grid-row: span 2; }
+.staff--foto li .nm { align-self: end; }
+.staff--foto li a { align-self: start; }
+
+/* Schmale Schirme: die Adresse unter Portraet und Name setzen, sonst nimmt
+   das Bild so viel Breite weg, dass lange Adressen umbrechen */
+@media (max-width: 620px) {
+  .staff--foto li .portraet { grid-row: auto; }
+  .staff--foto li a { grid-column: 1 / -1; margin-top: 0.15rem; }
+}
+
 /* Prozessbegleitung und Verwaltung als Kachel - gleicher Stil wie .person */
 .team-block {
   margin-top: 1.25rem;

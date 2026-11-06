@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Platzhalter-Portraet">
+  <defs><clipPath id="k3"><circle cx="100" cy="100" r="100"/></clipPath></defs>
+  <circle cx="100" cy="100" r="100" fill="#dde6ea"/>
+  <g clip-path="url(#k3)" fill="#4b6b7d" transform="translate(100 112) scale(1.5) translate(-100 -100)"><path d="M100 56c-15 0-25 10-25 24s10 27 25 27 25-13 25-27-10-24-25-24z"/><path d="M72 108c-6-16-7-38 1-50 5-9 16-14 27-14s22 5 27 14c8 12 7 34 1 50-3-9-4-22-5-30-7 5-15 7-23 7s-16-2-23-7c-1 8-2 21-5 30z"/><path d="M100 108c-27 0-48 17-54 42a100 100 0 0 0 108 0c-6-25-27-42-54-42z"/></g>
+</svg>
