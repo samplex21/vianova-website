@@ -240,17 +240,30 @@
 .facts__liste dd a { color: var(--farbe-primär-dunkel); }
 .facts__mail { font-size: 1rem; word-break: break-word; }
 
-.team-block { margin-top: 1.5rem; }
-.team-block h3 { color: var(--farbe-primär-dunkel); margin-bottom: 0.35rem; }
+/* Prozessbegleitung und Verwaltung als Kachel - gleicher Stil wie .person */
+.team-block {
+  margin-top: 1.25rem;
+  background: var(--farbe-bg);
+  border: 1px solid var(--farbe-rahmen);
+  border-top: 4px solid var(--farbe-akzent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.team-block h3 {
+  margin: 0 0 0.35rem; font-size: 1.1rem;
+  color: var(--farbe-primär-dunkel);
+}
 .team-block p { color: var(--farbe-text-leise); margin: 0; }
 
 /* Gelb-Blau: weitere weiße Flächen -> blaue Schrift */
 :root[data-theme="gb"] .offer,
 :root[data-theme="gb"] .person,
+:root[data-theme="gb"] .team-block,
 :root[data-theme="gb"] .facts,
 :root[data-theme="gb"] .toc { background: #fff !important; border-color: #0a1a3f !important; }
 :root[data-theme="gb"] .offer, :root[data-theme="gb"] .offer *,
 :root[data-theme="gb"] .person, :root[data-theme="gb"] .person *,
+:root[data-theme="gb"] .team-block, :root[data-theme="gb"] .team-block *,
 :root[data-theme="gb"] .facts, :root[data-theme="gb"] .facts *,
 :root[data-theme="gb"] .toc, :root[data-theme="gb"] .toc * { color: #0a1a3f !important; }
 
