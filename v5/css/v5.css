@@ -51,14 +51,23 @@
 /* ---- 2) Wortfeld-Hero (ersetzt die alte Wortwolke) ------- */
 .hero--v5 .hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; }
 .wordfield {
+  position: relative;
   display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; align-content: center;
   background: var(--farbe-bg-alt); border: 1px solid var(--farbe-rahmen);
   border-radius: 20px; padding: 1.75rem;
 }
+/* --wolke-skala wird vom Skript gesetzt, damit alle Woerter in die Flaeche passen */
 .wordfield span { font-weight: 700; line-height: 1.1; }
-.wordfield .w-lg { font-size: clamp(1.5rem, 3vw, 2.2rem); }
-.wordfield .w-md { font-size: clamp(1.1rem, 2.2vw, 1.5rem); }
-.wordfield .w-sm { font-size: clamp(0.95rem, 1.6vw, 1.15rem); }
+.wordfield .w-lg { font-size: calc(clamp(1.5rem, 3vw, 2.2rem) * var(--wolke-skala, 1)); }
+.wordfield .w-md { font-size: calc(clamp(1.1rem, 2.2vw, 1.5rem) * var(--wolke-skala, 1)); }
+.wordfield .w-sm { font-size: calc(clamp(0.95rem, 1.6vw, 1.15rem) * var(--wolke-skala, 1)); }
+
+/* Wortwolken-Modus: wird nur gesetzt, wenn das Skript die Woerter platziert hat.
+   Ohne JavaScript bleibt das einfache Flex-Layout darueber bestehen. */
+.wordfield--gepackt { display: block; }   /* Hoehe setzt das Skript */
+.wordfield--gepackt span {
+  position: absolute; white-space: nowrap; transform-origin: 50% 50%;
+}
 .wordfield .c-green { color: var(--farbe-primär); }
 .wordfield .c-orange { color: var(--farbe-akzent-dunkel); }
 .wordfield .c-dark { color: var(--farbe-primär-dunkel); }
