@@ -450,6 +450,35 @@
 :root[data-theme="gb"] .dl-item, :root[data-theme="gb"] .dl-item * { color: #0a1a3f !important; }
 :root[data-theme="gb"] .contact-list__item { border-color: #ff0 !important; }
 
+/* Formulartexte: Beschriftungen und Hinweise behielten in beiden
+   Kontrastansichten ihre gruene bzw. graue Farbe. Im Gelb-Blau-Modus
+   ergab das nur 2,1:1 auf dem dunkelblauen Grund. */
+:root[data-theme="sw"] .form label,
+:root[data-theme="sw"] .form .req,
+:root[data-theme="sw"] .form .optional,
+:root[data-theme="sw"] .form-note { color: #000 !important; }
+:root[data-theme="gb"] .form label,
+:root[data-theme="gb"] .form .req,
+:root[data-theme="gb"] .form .optional,
+:root[data-theme="gb"] .form-note { color: #ff0 !important; }
+
+/* Hinweiskasten bei der Portraet-Variante: weisse Flaeche, der Text wurde
+   aber gelb eingefaerbt (1,07:1). Wie die uebrigen weissen Kacheln behandeln. */
+:root[data-theme="gb"] .platzhalter-hinweis {
+  background: #fff !important; color: #0a1a3f !important; border-color: #0a1a3f !important;
+}
+:root[data-theme="sw"] .platzhalter-hinweis {
+  background: #fff !important; color: #000 !important; border-color: #000 !important;
+}
+/* Gleiches Muster beim Hinweiskasten der Rechtsseiten (.notice):
+   heller Grund, Text wurde gelb eingefaerbt (1,01:1). */
+:root[data-theme="gb"] .notice {
+  background: #fff !important; color: #0a1a3f !important; border-color: #0a1a3f !important;
+}
+:root[data-theme="sw"] .notice {
+  background: #fff !important; color: #000 !important; border-color: #000 !important;
+}
+
 /* Beitrags-Detailseite */
 .article { max-width: 760px; }
 .article__date { color: var(--farbe-text-leise); font-weight: 600; }
