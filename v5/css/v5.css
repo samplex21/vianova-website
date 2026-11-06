@@ -139,7 +139,7 @@
 :root[data-theme="sw"] .utilbar { background: #000 !important; color: #fff !important; }
 :root[data-theme="sw"] a,
 :root[data-theme="sw"] h1, :root[data-theme="sw"] h2, :root[data-theme="sw"] h3,
-:root[data-theme="sw"] .hero__eyebrow, :root[data-theme="sw"] .page-head__eyebrow { color: #000 !important; }
+:root[data-theme="sw"] .page-head__eyebrow { color: #000 !important; }
 :root[data-theme="sw"] a { text-decoration: underline; }
 :root[data-theme="sw"] *:not(.utilbar):not(.utilbar *) { border-color: #000 !important; }
 :root[data-theme="sw"] .btn--primary { background: #000 !important; color: #fff !important; }
@@ -160,7 +160,7 @@
 :root[data-theme="gb"] .foerder__logos li { background: #fff !important; } /* Logos bleiben lesbar */
 :root[data-theme="gb"] a,
 :root[data-theme="gb"] h1, :root[data-theme="gb"] h2, :root[data-theme="gb"] h3,
-:root[data-theme="gb"] .hero__eyebrow, :root[data-theme="gb"] .page-head__eyebrow,
+:root[data-theme="gb"] .page-head__eyebrow,
 :root[data-theme="gb"] .recruit p, :root[data-theme="gb"] .cta p,
 :root[data-theme="gb"] .site-footer address, :root[data-theme="gb"] p, :root[data-theme="gb"] li,
 :root[data-theme="gb"] dt, :root[data-theme="gb"] dd { color: #ff0 !important; }

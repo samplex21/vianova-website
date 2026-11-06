@@ -202,11 +202,6 @@ a:hover { color: var(--farbe-akzent-dunkel); }
   padding-block: clamp(3rem, 9vw, 6rem);
 }
 .hero__content { max-width: 46rem; }
-.hero__eyebrow {
-  text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent-dunkel);
-  margin-bottom: 0.75rem;
-}
 .hero__lead { font-size: 1.3rem; color: var(--farbe-text-leise); max-width: 40rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
 
