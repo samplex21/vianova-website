@@ -147,11 +147,7 @@
       }
 
       knopf.addEventListener("click", function () {
-        document.querySelectorAll(".job").forEach(function (j) {
-          j.classList.remove("wird-gedruckt");
-        });
-        anzeige.classList.add("wird-gedruckt");
-        wurzel.classList.add("druckt-einzelne-anzeige");
+        nurDieseAnzeige(anzeige);
         window.print();
       });
 
@@ -167,13 +163,43 @@
       }
     });
 
-    // nach dem Druckdialog wieder aufraeumen
-    window.addEventListener("afterprint", function () {
+    /* Die anderen Anzeigen werden doppelt ausgeblendet: ueber die
+       Druck-Stilregeln und zusaetzlich direkt am Element. Mobile Browser
+       (z. B. DuckDuckGo auf dem iPhone) werten die Druckregeln nicht
+       zuverlaessig aus - die direkte Ausblendung wirkt dort trotzdem.      */
+    function nurDieseAnzeige(anzeige) {
+      wiederAlleAnzeigen();          // immer von einem sauberen Stand ausgehen
+      document.querySelectorAll(".job").forEach(function (j) {
+        if (j === anzeige) {
+          j.classList.add("wird-gedruckt");
+        } else {
+          j.dataset.druckVorher = j.style.display;
+          j.style.display = "none";
+        }
+      });
+      wurzel.classList.add("druckt-einzelne-anzeige");
+    }
+
+    function wiederAlleAnzeigen() {
       wurzel.classList.remove("druckt-einzelne-anzeige");
       document.querySelectorAll(".job").forEach(function (j) {
         j.classList.remove("wird-gedruckt");
+        if ("druckVorher" in j.dataset) {
+          j.style.display = j.dataset.druckVorher;
+          delete j.dataset.druckVorher;
+        }
       });
+    }
+
+    // Aufraeumen: 'afterprint' kennt nicht jeder mobile Browser, deshalb
+    // zusaetzlich beim Zurueckkehren zur Seite.
+    window.addEventListener("afterprint", wiederAlleAnzeigen);
+    window.addEventListener("focus", wiederAlleAnzeigen);
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) wiederAlleAnzeigen();
     });
+    // Sicherheitsnetz: falls keines der Ereignisse eintrifft
+    window.addEventListener("pageshow", wiederAlleAnzeigen);
   }
 
 })();
