@@ -165,7 +165,8 @@
 :root[data-theme="sw"] *:not(.utilbar):not(.utilbar *) { border-color: #000 !important; }
 :root[data-theme="sw"] .btn--primary { background: #000 !important; color: #fff !important; }
 :root[data-theme="sw"] .btn--ghost { background: #fff !important; color: #000 !important; border-color: #000 !important; }
-:root[data-theme="sw"] .recruit p, :root[data-theme="sw"] .cta p, :root[data-theme="sw"] .site-footer address { color: #000 !important; }
+:root[data-theme="sw"] .recruit p, :root[data-theme="sw"] .cta p, :root[data-theme="sw"] .site-footer address,
+:root[data-theme="sw"] .facts__fliess, :root[data-theme="sw"] .facts dt { color: #000 !important; }
 
 /* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
 :root[data-theme="gb"] body,
@@ -224,6 +225,20 @@
   max-height: 46px; width: auto; background: #fff;
   border: 1px solid var(--farbe-rahmen); border-radius: 8px; padding: 0.4rem 0.6rem;
 }
+
+/* Seitenspalte: Meilensteine und Mitglieds-Kachel untereinander */
+.split__seite { display: grid; gap: 1.5rem; align-content: start; }
+
+/* Mitglieds-Kachel: gleicher Kachel-Stil wie die Meilensteine */
+.facts--text { display: block; }
+.facts__titel {
+  margin: 0 0 0.5rem; font-size: 1.25rem; line-height: 1.25;
+  color: var(--farbe-primär-dunkel);
+}
+.facts__fliess { margin: 0 0 1.25rem; color: var(--farbe-text-leise); }
+.facts__liste { margin: 0; display: grid; gap: 1rem; }
+.facts__liste dd a { color: var(--farbe-primär-dunkel); }
+.facts__mail { font-size: 1rem; word-break: break-word; }
 
 .team-block { margin-top: 1.5rem; }
 .team-block h3 { color: var(--farbe-primär-dunkel); margin-bottom: 0.35rem; }
