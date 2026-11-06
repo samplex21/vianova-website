@@ -375,7 +375,9 @@ a:hover { color: var(--farbe-akzent-dunkel); }
 
 /* Personen (Vorstand/Team) */
 .people { list-style: none; margin: 0; padding: 0;
-  display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  /* auto-fit statt auto-fill: keine leeren Spalten, die Kacheln nutzen die
+     volle Breite - sonst bricht z. B. eine lange E-Mail-Adresse um */
+  display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .person { background: var(--farbe-bg); border: 1px solid var(--farbe-rahmen);
   border-top: 4px solid var(--farbe-akzent); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
 .person__role { margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
