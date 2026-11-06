@@ -18,7 +18,7 @@
 <body>
   <a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
 
-  <!-- Utility-Leiste: Barrierefreiheit + Instagram -->
+  <!-- Utility-Leiste: Barrierefreiheit + soziale Netzwerke -->
   <div class="utilbar">
     <div class="container utilbar__inner">
       <div class="a11y">
@@ -35,15 +35,26 @@
           <button type="button" class="a11y__btn" data-theme-set="gb" aria-pressed="false">Gelb-Blau</button>
         </div>
       </div>
-      <a class="utilbar__ig" href="https://www.instagram.com/vianova_reutte/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
-          <circle cx="12" cy="12" r="4.5"/>
-          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
-        </svg>
-        Instagram
-        <span class="visually-hidden">(öffnet in neuem Fenster)</span>
-      </a>
+      <div class="utilbar__sozial">
+        <a class="utilbar__link" href="https://www.instagram.com/vianova_reutte/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+          <span class="visually-hidden">(öffnet in neuem Fenster)</span>
+        </a>
+        <a class="utilbar__link" href="https://www.facebook.com/people/Vianova-Reutte/100090468980663/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+            <path d="M14.8 8h-1.5a2.5 2.5 0 0 0-2.5 2.5v9"/>
+            <path d="M8.6 13.2h4.8"/>
+          </svg>
+          Facebook
+          <span class="visually-hidden">(öffnet in neuem Fenster)</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -168,14 +179,19 @@
       </div>
     </section>
 
-    <!-- Instagram-Teaser -->
+    <!-- Teaser: soziale Netzwerke -->
     <section class="section ig-teaser" aria-labelledby="ig-titel">
       <div class="container">
-        <h2 id="ig-titel">Immer aktuell auf Instagram</h2>
-        <p>Einblicke in unsere Arbeit, Aktionen und Neuigkeiten gibt es auf unserem Kanal.</p>
-        <a class="btn btn--ghost" href="https://www.instagram.com/vianova_reutte/" target="_blank" rel="noopener">
-          @vianova_reutte folgen <span class="visually-hidden">(öffnet in neuem Fenster)</span>
-        </a>
+        <h2 id="ig-titel">Immer aktuell auf Instagram &amp; Facebook</h2>
+        <p>Einblicke in unsere Arbeit, Aktionen und Neuigkeiten gibt es auf unseren Kanälen.</p>
+        <div class="ig-teaser__knoepfe">
+          <a class="btn btn--ghost" href="https://www.instagram.com/vianova_reutte/" target="_blank" rel="noopener">
+            @vianova_reutte folgen <span class="visually-hidden">(öffnet in neuem Fenster)</span>
+          </a>
+          <a class="btn btn--ghost" href="https://www.facebook.com/people/Vianova-Reutte/100090468980663/" target="_blank" rel="noopener">
+            Facebook <span class="visually-hidden">(öffnet in neuem Fenster)</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -223,6 +239,7 @@
           <li><a href="barrierefreiheit.html">Barrierefreiheitserklärung</a></li>
           <li><a href="hinweisgeberschutz.html">Hinweisgeberschutz</a></li>
           <li><a href="https://www.instagram.com/vianova_reutte/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Vianova-Reutte/100090468980663/" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </nav>
     </div>

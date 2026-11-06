@@ -27,12 +27,14 @@
 }
 .a11y__btn:hover { background: rgba(255,255,255,0.15); }
 .a11y__btn[aria-pressed="true"] { background: #fff; color: var(--farbe-primär-dunkel); }
-.utilbar__ig {
+/* Soziale Netzwerke rechts in der Utility-Leiste */
+.utilbar__sozial { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.utilbar__link {
   display: inline-flex; align-items: center; gap: 0.45rem;
   color: #fff; text-decoration: none; font-weight: 700;
 }
-.utilbar__ig:hover { color: #fff; text-decoration: underline; }
-.utilbar__ig svg { width: 20px; height: 20px; }
+.utilbar__link:hover { color: #fff; text-decoration: underline; }
+.utilbar__link svg { width: 20px; height: 20px; flex-shrink: 0; }
 
 /* Home-Symbol im Menü */
 .site-nav a .home-ic { width: 18px; height: 18px; vertical-align: -3px; margin-right: 0.4rem; }
@@ -90,7 +92,11 @@
 
 /* ---- 5) Instagram-Teaser -------------------------------- */
 .ig-teaser { text-align: center; }
-.ig-teaser .btn { margin-top: 0.75rem; }
+/* Knoepfe untereinander, mittig */
+.ig-teaser__knoepfe {
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  margin-top: 0.75rem;
+}
 
 /* ---- 6) Cookie-Hinweis ---------------------------------- */
 .cookie {
