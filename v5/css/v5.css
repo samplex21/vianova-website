@@ -17,13 +17,16 @@
   gap: 1rem; min-height: 44px; flex-wrap: wrap; padding-block: 0.35rem;
 }
 .a11y { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
-.a11y__group { display: flex; align-items: center; gap: 0.4rem; }
+.a11y__group { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
 .a11y__label { font-weight: 700; }
 .a11y__btn {
   min-width: 40px; min-height: 34px; cursor: pointer;
   background: transparent; color: #fff;
   border: 1px solid rgba(255,255,255,0.5); border-radius: 6px;
   font-weight: 700; font-size: 0.9rem; padding: 0.2rem 0.6rem;
+  /* nicht schmaler werden als die Beschriftung: sonst laeuft der Text
+     aus dem Knopf heraus und sitzt nicht mehr mittig */
+  flex-shrink: 0; white-space: nowrap;
 }
 .a11y__btn:hover { background: rgba(255,255,255,0.15); }
 .a11y__btn[aria-pressed="true"] { background: #fff; color: var(--farbe-primär-dunkel); }
