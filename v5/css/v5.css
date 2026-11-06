@@ -42,6 +42,10 @@
 /* Home-Symbol im Menü */
 .site-nav a .home-ic { width: 18px; height: 18px; vertical-align: -3px; margin-right: 0.4rem; }
 
+/* Wortwolke in den Kontrast-Themes: Anordnung bleibt, nur die Farbe wechselt */
+:root[data-theme="sw"] .wordfield { --ww-1: #000; --ww-2: #000; --ww-3: #000; }
+:root[data-theme="gb"] .wordfield { --ww-1: #ff0; --ww-2: #ff0; --ww-3: #ff0; }
+
 /* Sprungziel 'Offene Stellen': nicht unter der stehenden Kopfzeile landen */
 #stellen { scroll-margin-top: 104px; }
 
@@ -51,26 +55,31 @@
 /* ---- 2) Wortfeld-Hero (ersetzt die alte Wortwolke) ------- */
 .hero--v5 .hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; }
 .wordfield {
-  position: relative;
-  display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; align-content: center;
+  /* Farben der Wortwolke - werden in den Kontrast-Themes umgestellt */
+  --ww-1: var(--farbe-primär);
+  --ww-2: var(--farbe-akzent-dunkel);
+  --ww-3: var(--farbe-primär-dunkel);
   background: var(--farbe-bg-alt); border: 1px solid var(--farbe-rahmen);
-  border-radius: 20px; padding: 1.75rem;
+  border-radius: 20px; padding: 1.5rem;
+  /* in rem, damit die Wolke bei vergroesserter Schrift mitwaechst */
+  width: 100%; max-width: 35rem; margin-inline: auto;
 }
-/* --wolke-skala wird vom Skript gesetzt, damit alle Woerter in die Flaeche passen */
-.wordfield span { font-weight: 700; line-height: 1.1; }
-.wordfield .w-lg { font-size: calc(clamp(1.5rem, 3vw, 2.2rem) * var(--wolke-skala, 1)); }
-.wordfield .w-md { font-size: calc(clamp(1.1rem, 2.2vw, 1.5rem) * var(--wolke-skala, 1)); }
-.wordfield .w-sm { font-size: calc(clamp(0.95rem, 1.6vw, 1.15rem) * var(--wolke-skala, 1)); }
+/* Feste Anordnung, skaliert als Ganzes mit der verfuegbaren Breite */
+.wortwolke { display: block; width: 100%; height: auto; }
+.wortwolke text {
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.wortwolke .ww-gruen  { fill: var(--ww-1); }
+.wortwolke .ww-orange { fill: var(--ww-2); }
+.wortwolke .ww-dunkel { fill: var(--ww-3); }
 
-/* Wortwolken-Modus: wird nur gesetzt, wenn das Skript die Woerter platziert hat.
-   Ohne JavaScript bleibt das einfache Flex-Layout darueber bestehen. */
-.wordfield--gepackt { display: block; }   /* Hoehe setzt das Skript */
-.wordfield--gepackt span {
-  position: absolute; white-space: nowrap; transform-origin: 50% 50%;
+/* Querformat auf dem Handy: wenig Bildschirmhoehe, Wolke kleiner halten */
+@media (orientation: landscape) and (max-height: 560px) {
+  .wordfield { max-width: 25rem; padding: 1rem; }
 }
-.wordfield .c-green { color: var(--farbe-primär); }
-.wordfield .c-orange { color: var(--farbe-akzent-dunkel); }
-.wordfield .c-dark { color: var(--farbe-primär-dunkel); }
+
 .photo-hint {
   margin-top: 0.75rem; font-size: 0.85rem; color: var(--farbe-text-leise);
   font-style: italic;
