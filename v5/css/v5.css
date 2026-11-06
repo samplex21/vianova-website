@@ -49,6 +49,20 @@
 /* Sprungziel 'Offene Stellen': nicht unter der stehenden Kopfzeile landen */
 #stellen { scroll-margin-top: 104px; }
 
+.section__aktion { margin-top: 1.5rem; }
+
+/* Auf dem Handy nehmen die Haupt-Schaltflaechen der Startseite die volle
+   Breite ein - so fluchten sie mit den Kacheln darueber und darunter.
+   Ab Tablet-Breite bleiben sie inhaltsbreit, sonst wuerden sie zu lang. */
+@media (max-width: 600px) {
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn,
+  .recruit .btn,
+  .section__aktion .btn {
+    display: block; width: 100%; text-align: center;
+  }
+}
+
 /* Kleiner Abstand zwischen Utility-Leiste (grüner Balken) und Logo */
 .utilbar + .site-header .site-header__inner { padding-top: 1rem; }
 
