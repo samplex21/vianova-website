@@ -125,8 +125,16 @@
         window.print();
       });
 
-      var leiste = anzeige.querySelector(".job__apply");
-      (leiste || anzeige).appendChild(knopf);
+      // Knopf oben rechts neben den Stellentitel setzen
+      if (titel) {
+        var kopf = document.createElement("div");
+        kopf.className = "job__kopf";
+        titel.parentNode.insertBefore(kopf, titel);
+        kopf.appendChild(titel);
+        kopf.appendChild(knopf);
+      } else {
+        anzeige.insertBefore(knopf, anzeige.firstChild);
+      }
     });
 
     // nach dem Druckdialog wieder aufraeumen

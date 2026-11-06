@@ -447,7 +447,14 @@
    Papier; druckt jemand ueber das Browsermenue, erscheinen alle.
    ========================================================= */
 .druck-fuss { display: none; }
-.job__drucken { margin-top: 0.5rem; margin-left: 0.75rem; }
+
+/* Kopfzeile der Stellenanzeige: Titel links, Drucken-Knopf rechts */
+.job__kopf {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.job__kopf .job__title { margin: 0; }
+.job__drucken { flex-shrink: 0; margin-left: auto; }   /* bleibt auch nach dem Umbruch rechts */
 
 @media print {
   /* Alles ausblenden, was auf Papier nicht hilft */
