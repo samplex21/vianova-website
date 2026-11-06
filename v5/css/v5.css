@@ -58,7 +58,9 @@
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn,
   .recruit .btn,
-  .section__aktion .btn {
+  .section__aktion .btn,
+  .map-link .btn,
+  .form .btn {
     display: block; width: 100%; text-align: center;
   }
 }
