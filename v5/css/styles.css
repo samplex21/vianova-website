@@ -123,15 +123,14 @@ a:hover { color: var(--farbe-akzent-dunkel); }
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-height: 72px;
+  min-height: 88px;
   flex-wrap: wrap;
 }
 
-.brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; margin-right: auto; }
-.brand__logo { display: block; height: 40px; width: auto; }
-.brand__text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand__name { font-weight: 700; font-size: 1.3rem; color: var(--farbe-primär-dunkel); }
-.brand__tag { font-size: 0.85rem; color: var(--farbe-text-leise); }
+/* Logo steht rechts in der Kopfzeile, Navigation links */
+.brand { display: inline-flex; align-items: center; text-decoration: none; order: 2; margin-left: auto; }
+.brand__logo { display: block; height: 60px; width: auto; }
+.site-nav { order: 1; }
 
 /* Schriftgröße-Buttons */
 .text-size { display: flex; gap: 0.25rem; }
@@ -149,12 +148,13 @@ a:hover { color: var(--farbe-akzent-dunkel); }
 
 /* Navigation */
 .site-nav__list {
-  list-style: none; display: flex; gap: 0.25rem;
+  list-style: none; display: flex; gap: 0.1rem;
   margin: 0; padding: 0;
 }
 .site-nav a {
   display: block;
-  padding: 0.6rem 0.9rem;
+  /* etwas kompakter, damit das Menue neben dem groesseren Logo Platz hat */
+  padding: 0.6rem 0.5rem;
   text-decoration: none;
   color: var(--farbe-text);
   border-radius: var(--radius-klein);
@@ -420,9 +420,15 @@ a:hover { color: var(--farbe-akzent-dunkel); }
     background: transparent; border: 1px solid var(--farbe-rahmen);
     border-radius: var(--radius-klein); padding: 0.55rem 0.9rem;
     color: var(--farbe-primär-dunkel); font-weight: 700; cursor: pointer;
-    order: 3;
+    order: 1;
   }
+  .brand { order: 2; }
   .nav-toggle__label { font-size: 1rem; }
+
+  /* Auf dem Handy etwas kleiner, damit Logo und Menue-Knopf in eine Zeile passen
+     (die Kopfzeile bleibt beim Scrollen stehen und soll nicht zu hoch werden) */
+  .brand__logo { height: 48px; }
+  .site-header__inner { min-height: 72px; }
 
   /* Navigation standardmäßig eingeklappt */
   .site-nav {

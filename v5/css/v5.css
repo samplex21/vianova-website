@@ -155,7 +155,6 @@
 :root[data-theme="gb"] .site-header,
 :root[data-theme="gb"] .card { background: #fff !important; border-color: #0a1a3f !important; }
 :root[data-theme="gb"] .site-header a,
-:root[data-theme="gb"] .site-header .brand__tag,
 :root[data-theme="gb"] .site-header .nav-toggle,
 :root[data-theme="gb"] .site-nav a,
 :root[data-theme="gb"] .card,
