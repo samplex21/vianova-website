@@ -271,7 +271,9 @@ a:hover { color: var(--farbe-akzent-dunkel); }
 }
 .page-head__eyebrow {
   text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 700; font-size: 0.9rem; color: var(--farbe-akzent-dunkel);
+  /* eigener, dunklerer Ton: der Akzent erreichte auf hellem Grund nur 4,4:1,
+     WCAG AA verlangt 4,5:1 */
+  font-weight: 700; font-size: 0.9rem; color: #9c4a0d;
   margin-bottom: 0.5rem;
 }
 .page-head__lead { font-size: 1.2rem; color: var(--farbe-text-leise); max-width: 55ch; }

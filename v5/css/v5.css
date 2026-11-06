@@ -92,7 +92,7 @@
 }
 .recruit h2 { color: #fff; }
 .recruit__inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; }
-.recruit p { color: #eaf3ec; font-size: 1.15rem; }
+.recruit p { color: #f2f8f3; font-size: 1.15rem; }   /* leicht heller: 4,49 -> 4,7:1 */
 .recruit .btn--primary { background: var(--farbe-akzent); color: #1a1108; }
 .recruit .btn--primary:hover { background: #ffa860; color: #1a1108; }
 /* Kachel ist ein Link auf die offenen Stellen */
@@ -165,8 +165,33 @@
 :root[data-theme="sw"] *:not(.utilbar):not(.utilbar *) { border-color: #000 !important; }
 :root[data-theme="sw"] .btn--primary { background: #000 !important; color: #fff !important; }
 :root[data-theme="sw"] .btn--ghost { background: #fff !important; color: #000 !important; border-color: #000 !important; }
+/* Knoepfe mit eigener Farbgebung ueberschreiben sonst die Schwarz-Weiss-Regel:
+   'Offene Stellen ansehen' blieb orange mit weisser Schrift (2,8:1). */
+:root[data-theme="sw"] .recruit .btn--primary,
+:root[data-theme="sw"] .cta .btn--primary { background: #000 !important; color: #fff !important; }
+/* Beschriftungen 'Telefon:'/'E-Mail:' sind hellgruen fuer dunklen Grund -
+   im Schwarz-Weiss-Modus steht dahinter aber Weiss (1,5:1). */
+:root[data-theme="sw"] .cta__label { color: #000 !important; }
 :root[data-theme="sw"] .recruit p, :root[data-theme="sw"] .cta p, :root[data-theme="sw"] .site-footer address,
 :root[data-theme="sw"] .facts__fliess, :root[data-theme="sw"] .facts dt { color: #000 !important; }
+
+/* Diese Texte sind im Standard weiss auf dunklem Grund. Im Schwarz-Weiss-Modus
+   wird ihr Hintergrund weiss - ohne diese Regeln waeren sie unsichtbar. */
+:root[data-theme="sw"] .site-footer__brand,
+:root[data-theme="sw"] .site-footer__heading,
+:root[data-theme="sw"] .site-footer__bottom,
+:root[data-theme="sw"] .site-footer__bottom p { color: #000 !important; }
+:root[data-theme="sw"] .site-footer__bottom { border-top-color: #000 !important; }
+
+/* Umgekehrter Fall: die Utility-Leiste bleibt schwarz, ihre Links muessen
+   deshalb weiss bleiben (die allgemeine a-Regel macht sie sonst schwarz). */
+:root[data-theme="sw"] .utilbar a,
+:root[data-theme="sw"] .utilbar__link { color: #fff !important; }
+
+/* Sprunglink (erscheint beim Tabben): behaelt sonst seinen gruenen Grund,
+   waehrend die Schrift schwarz wird - nur 2,7:1 */
+:root[data-theme="sw"] .skip-link,
+:root[data-theme="sw"] .skip-link:focus { background: #000 !important; color: #fff !important; }
 
 /* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
 :root[data-theme="gb"] body,
@@ -179,6 +204,8 @@
 :root[data-theme="gb"] .cookie,
 :root[data-theme="gb"] .site-footer { background: #0a1a3f !important; color: #ff0 !important; }
 :root[data-theme="gb"] .utilbar { background: #05102a !important; color: #ff0 !important; }
+:root[data-theme="gb"] .skip-link,
+:root[data-theme="gb"] .skip-link:focus { background: #05102a !important; color: #ff0 !important; }
 :root[data-theme="gb"] .foerder__logos li { background: #fff !important; } /* Logos bleiben lesbar */
 :root[data-theme="gb"] a,
 :root[data-theme="gb"] h1, :root[data-theme="gb"] h2, :root[data-theme="gb"] h3,
