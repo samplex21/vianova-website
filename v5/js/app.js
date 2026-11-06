@@ -6,6 +6,7 @@
    4) Cookie-Hinweis
    5) Jahreszahl
    6) Stellenanzeige drucken
+   7) Rueckmeldung des Kontaktformulars
    Alle Einstellungen werden gespeichert und beim Laden wiederhergestellt.
    ========================================================= */
 (function () {
@@ -85,6 +86,35 @@
   /* 5) Jahreszahl --------------------------------------- */
   var jahr = document.getElementById("jahr");
   if (jahr) jahr.textContent = String(new Date().getFullYear());
+
+
+  /* 7) Rueckmeldung des Kontaktformulars -----------------
+     kontakt-senden.php leitet nach dem Absenden mit ?status=ok bzw.
+     ?status=fehler hierher zurueck. Es werden keine Eingabedaten in der
+     Adresse uebergeben.                                                   */
+  var statusFeld = document.getElementById("form-status");
+  if (statusFeld) {
+    var status = new URLSearchParams(window.location.search).get("status");
+    if (status === "ok" || status === "fehler") {
+      var gelungen = status === "ok";
+      statusFeld.textContent = gelungen
+        ? "Vielen Dank! Ihre Nachricht wurde an das Vereinsbüro geschickt. Wir melden uns bald bei Ihnen."
+        : "Die Nachricht konnte leider nicht gesendet werden. Bitte versuchen Sie es noch einmal oder schreiben Sie direkt an office@vianova-austria.at.";
+      statusFeld.className = "form-status " + (gelungen ? "form-status--ok" : "form-status--fehler");
+      statusFeld.setAttribute("role", gelungen ? "status" : "alert");
+      statusFeld.hidden = false;
+      statusFeld.setAttribute("tabindex", "-1");
+      statusFeld.focus();
+      if (gelungen) {
+        var formular = document.querySelector(".form");
+        if (formular) formular.reset();
+      }
+      // Statuswert aus der Adresse nehmen, damit er beim Neuladen verschwindet
+      if (window.history.replaceState) {
+        window.history.replaceState({}, "", window.location.pathname);
+      }
+    }
+  }
 
   /* 6) Stellenanzeige drucken ---------------------------
      Die Knoepfe werden hier erzeugt, nicht im HTML hinterlegt: eine neue

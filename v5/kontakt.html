@@ -100,7 +100,7 @@
           </div>
           <div class="contact-list__item">
             <dt>Telefon</dt>
-            <dd><a href="tel:+43567262486">+43 5672 62486</a> <span style="color:var(--farbe-text-leise)">(am Handy tippen zum Anrufen)</span></dd>
+            <dd><a href="tel:+43567262486">+43 5672 62486</a></dd>
           </div>
           <div class="contact-list__item">
             <dt>E-Mail</dt>
@@ -122,12 +122,12 @@
         <h2 id="formular-titel">Schreiben Sie uns</h2>
         <p class="form-note">Mit <span aria-hidden="true">*</span> markierte Felder sind Pflichtfelder.</p>
         <!--
-          Hinweis: statische Seite ohne Server. Damit das Formular E-Mails
-          verschickt, muss im action-Attribut ein Formular-Dienst (z. B. Formspree)
-          oder eine serverseitige Adresse eingetragen werden. Bis dahin funktioniert
-          der direkte Weg per Telefon/E-Mail oben.
+          Das Formular sendet an kontakt-senden.php. Dafuer braucht die Seite
+          einen Webspace mit PHP und Mailversand - auf GitHub Pages laeuft das
+          nicht. Bis zum Umzug bleibt der direkte Weg per Telefon/E-Mail oben.
         -->
-        <form class="form" action="#" method="post" novalidate>
+        <p class="form-status" id="form-status" hidden></p>
+        <form class="form" action="kontakt-senden.php" method="post" novalidate>
           <div class="form__row">
             <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
             <input type="text" id="name" name="name" autocomplete="name" required>
@@ -143,6 +143,10 @@
           <div class="form__row">
             <label for="nachricht">Ihre Nachricht <span class="req" aria-hidden="true">*</span></label>
             <textarea id="nachricht" name="nachricht" rows="6" required></textarea>
+          </div>
+          <div class="honigtopf" aria-hidden="true">
+            <label for="webseite">Dieses Feld bitte leer lassen</label>
+            <input type="text" id="webseite" name="webseite" tabindex="-1" autocomplete="off">
           </div>
           <button type="submit" class="btn btn--primary">Nachricht senden</button>
         </form>

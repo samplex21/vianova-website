@@ -508,3 +508,16 @@
 
   @page { margin: 16mm 14mm; }
 }
+
+/* ---- Kontaktformular: Rueckmeldung und Spamschutz ------- */
+.form-status {
+  margin: 0 0 1.25rem; padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-klein); border-left: 4px solid;
+  font-weight: 600;
+}
+.form-status--ok     { background: #eef5ef; border-color: var(--farbe-primär); color: var(--farbe-primär-dunkel); }
+.form-status--fehler { background: #fdeadd; border-color: var(--farbe-akzent-dunkel); color: #7a3a09; }
+.form-status:focus-visible { outline: 3px solid var(--farbe-akzent-dunkel); outline-offset: 3px; }
+
+/* Falle fuer Spam-Bots: fuer Menschen weder sichtbar noch erreichbar */
+.honigtopf { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
