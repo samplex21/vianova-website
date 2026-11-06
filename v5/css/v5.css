@@ -438,3 +438,66 @@
   .recruit__inner { grid-template-columns: 1fr; }
   .a11y { gap: 0.75rem; }
 }
+
+/* =========================================================
+   7) Druckansicht
+   Am Bildschirm aendert sich hierdurch nichts. Beim Drucken bleiben
+   Logo, die Stellenanzeige und eine Fusszeile mit Absender und Datum.
+   Wurde der Knopf an einer Anzeige gedrueckt, kommt nur diese aufs
+   Papier; druckt jemand ueber das Browsermenue, erscheinen alle.
+   ========================================================= */
+.druck-fuss { display: none; }
+.job__drucken { margin-top: 0.5rem; margin-left: 0.75rem; }
+
+@media print {
+  /* Alles ausblenden, was auf Papier nicht hilft */
+  .utilbar, .site-nav, .nav-toggle, .skip-link,
+  .cookie, .site-footer, .job__drucken,
+  .job__apply .btn { display: none !important; }   /* Knoepfe helfen auf Papier nicht */
+
+  /* Nur die angeklickte Anzeige drucken */
+  :root.druckt-einzelne-anzeige .job:not(.wird-gedruckt) { display: none !important; }
+  :root.druckt-einzelne-anzeige .page-head,
+  :root.druckt-einzelne-anzeige .section:not(#stellen) { display: none !important; }
+  /* Der Abschnittskopf ('... in zwei Varianten') passt nicht zu einer
+     einzelnen Anzeige - die hat ihren eigenen Titel */
+  :root.druckt-einzelne-anzeige #stellen .section__head { display: none !important; }
+
+  /* Kopfzeile auf das Logo reduzieren */
+  .site-header {
+    position: static; border-bottom: 1px solid #999;
+    padding-bottom: 0.5rem; margin-bottom: 1.5rem;
+  }
+  .site-header__inner { display: block; min-height: 0; padding: 0; }
+  .brand { display: block; margin: 0; }
+  .brand__logo { height: 48px; }
+
+  /* Tintensparend: keine Flaechen, Farbbalken als feine graue Linie */
+  body, .section, .section--alt, .job {
+    background: #fff !important; color: #000 !important;
+  }
+  .job {
+    border: none !important; border-radius: 0;
+    padding: 0; margin: 0;
+  }
+  .job__title { font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .job__tag {
+    background: #fff !important; border: 1px solid #666;
+    color: #000 !important;
+  }
+  .job__apply { border-top: 1px solid #999; }
+  h1, h2, h3, h4, .job__title { color: #000 !important; }
+  a { color: #000 !important; text-decoration: underline; }
+  /* Saubere Seitenumbrueche */
+  .job, .job__apply, .job ul, .job h4 + ul { break-inside: avoid; }
+  .job h4 { break-after: avoid; }
+
+  /* Fusszeile mit Absender und Datum des Ausdrucks */
+  .druck-fuss {
+    display: block; margin-top: 2rem; padding-top: 0.75rem;
+    border-top: 1px solid #999; font-size: 0.8rem; color: #000;
+  }
+  .druck-fuss p { margin: 0.15rem 0; }
+
+  @page { margin: 16mm 14mm; }
+}

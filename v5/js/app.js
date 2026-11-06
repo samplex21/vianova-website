@@ -5,6 +5,7 @@
    3) Kontrast-Themes (Standard / Schwarz-Weiß / Gelb-Blau)
    4) Cookie-Hinweis
    5) Jahreszahl
+   6) Stellenanzeige drucken
    Alle Einstellungen werden gespeichert und beim Laden wiederhergestellt.
    ========================================================= */
 (function () {
@@ -84,5 +85,57 @@
   /* 5) Jahreszahl --------------------------------------- */
   var jahr = document.getElementById("jahr");
   if (jahr) jahr.textContent = String(new Date().getFullYear());
+
+  /* 6) Stellenanzeige drucken ---------------------------
+     Die Knoepfe werden hier erzeugt, nicht im HTML hinterlegt: eine neue
+     Stellenanzeige bekommt ihren Knopf dadurch von selbst, eine geloeschte
+     nimmt ihn mit. Am Druckvorgang muss nie etwas nachgezogen werden.      */
+  var anzeigen = document.querySelectorAll(".job:not(.job--initiativ)");
+  if (anzeigen.length && typeof window.print === "function") {
+
+    // Fusszeile nur fuer den Ausdruck: Absender und Datum des Ausdrucks
+    var fuss = document.createElement("div");
+    fuss.className = "druck-fuss";
+    var heute = new Date().toLocaleDateString("de-AT", {
+      day: "numeric", month: "long", year: "numeric"
+    });
+    fuss.innerHTML =
+      "<p>Elternverein Vianova · Planseestraße 13, 6600 Reutte, Österreich · " +
+      "Tel. +43 5672 62486 · office@vianova-austria.at</p>" +
+      "<p>Ausdruck vom " + heute + " · vianova-austria.at</p>";
+    document.body.appendChild(fuss);
+
+    anzeigen.forEach(function (anzeige) {
+      var knopf = document.createElement("button");
+      knopf.type = "button";
+      knopf.className = "btn btn--primary job__drucken";
+      knopf.textContent = "Drucken";
+
+      var titel = anzeige.querySelector(".job__title");
+      if (titel) {
+        knopf.setAttribute("aria-label", "Stellenanzeige „" + titel.textContent + "“ drucken");
+      }
+
+      knopf.addEventListener("click", function () {
+        document.querySelectorAll(".job").forEach(function (j) {
+          j.classList.remove("wird-gedruckt");
+        });
+        anzeige.classList.add("wird-gedruckt");
+        wurzel.classList.add("druckt-einzelne-anzeige");
+        window.print();
+      });
+
+      var leiste = anzeige.querySelector(".job__apply");
+      (leiste || anzeige).appendChild(knopf);
+    });
+
+    // nach dem Druckdialog wieder aufraeumen
+    window.addEventListener("afterprint", function () {
+      wurzel.classList.remove("druckt-einzelne-anzeige");
+      document.querySelectorAll(".job").forEach(function (j) {
+        j.classList.remove("wird-gedruckt");
+      });
+    });
+  }
 
 })();
