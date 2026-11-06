@@ -320,6 +320,9 @@
   border-left: 5px solid var(--farbe-primär); border-radius: var(--radius);
   padding: 1.75rem; margin-bottom: 1.5rem; }
 .job__title { margin: 0 0 0.25rem; color: var(--farbe-primär-dunkel); }
+/* Initiativbewerbung: gleiche Kachelform, aber orangefarbener Balken -
+   so hebt sie sich von den beiden Stellenanzeigen ab */
+.job--initiativ { border-left-color: var(--farbe-akzent); margin-bottom: 0; }
 .job__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0 0.5rem; }
 .job__tag { background: var(--farbe-bg-alt); color: var(--farbe-primär-dunkel);
   border-radius: 999px; padding: 0.2rem 0.8rem; font-size: 0.85rem; font-weight: 700; }
