@@ -176,6 +176,7 @@
 :root[data-theme="sw"] .utilbar { background: #000 !important; color: #fff !important; }
 :root[data-theme="sw"] a,
 :root[data-theme="sw"] h1, :root[data-theme="sw"] h2, :root[data-theme="sw"] h3,
+:root[data-theme="sw"] h4, :root[data-theme="sw"] h5, :root[data-theme="sw"] h6,
 :root[data-theme="sw"] .page-head__eyebrow { color: #000 !important; }
 :root[data-theme="sw"] a { text-decoration: underline; }
 :root[data-theme="sw"] *:not(.utilbar):not(.utilbar *) { border-color: #000 !important; }
@@ -208,6 +209,28 @@
    waehrend die Schrift schwarz wird - nur 2,7:1 */
 :root[data-theme="sw"] .skip-link,
 :root[data-theme="sw"] .skip-link:focus { background: #000 !important; color: #fff !important; }
+
+/* Weitere Textstellen, die im Standard das dunkle Gruen oder das Orange
+   des Vereins tragen. Diese Farben bleiben ohne eigene Regel auch im
+   Schwarz-Weiss-Modus stehen - hier werden sie auf reines Schwarz gesetzt. */
+/* 'Das sind wir': Leitgedanken-Zitat, Kennzahlen-Kacheln, Namen */
+:root[data-theme="sw"] .quote,
+:root[data-theme="sw"] .quote span,
+:root[data-theme="sw"] .facts dd,
+:root[data-theme="sw"] .facts__titel,
+:root[data-theme="sw"] .facts__liste dd a,
+:root[data-theme="sw"] .person__role,
+:root[data-theme="sw"] .person__name,
+:root[data-theme="sw"] .staff .nm,
+/* 'Mitarbeiten': Merkmal-Pillen und Zwischentitel der Stellenanzeigen */
+:root[data-theme="sw"] .job__tag,
+:root[data-theme="sw"] .job__title,
+/* 'Einblicke': Kategorie, Titel, Anrisstext und 'Weiterlesen' der Kacheln */
+:root[data-theme="sw"] .collage__body,
+:root[data-theme="sw"] .collage__body * { color: #000 !important; }
+/* Hintergruende, die im Standard zart gruen sind: im Schwarz-Weiss-Modus weiss */
+:root[data-theme="sw"] .job__tag,
+:root[data-theme="sw"] .quote { background: #fff !important; }
 
 /* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
 :root[data-theme="gb"] body,
