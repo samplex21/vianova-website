@@ -395,6 +395,15 @@
   box-shadow: var(--schatten); display: block; }
 
 /* Stellenausschreibungen (Mitarbeiten) */
+/* 'Warum Vianova': vier gleich breite Kacheln in einer Reihe. Das
+   Grundraster der Kacheln fuellt die Breite selbsttaetig auf - bei vier
+   Stueck ergaebe das je nach Fensterbreite auch mal 3 + 1. Hier wird die
+   Spaltenzahl deshalb fest vorgegeben: vier am Desktop, zwei auf dem
+   Tablet, am Handy untereinander. */
+.cards--vier { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .cards--vier { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .cards--vier { grid-template-columns: 1fr; } }
+
 .job { background: var(--farbe-bg); border: 1px solid var(--farbe-rahmen);
   border-left: 5px solid var(--farbe-primär); border-radius: var(--radius);
   padding: 1.75rem; margin-bottom: 1.5rem; }
