@@ -241,6 +241,10 @@
    Variablen. Wird sie hier umdefiniert, stimmen beide Varianten zugleich. */
 :root[data-theme="sw"] .site-nav a[aria-current="page"] { --farbe-akzent: #000; }
 
+/* Menue-Knopf am Handy: die drei Balken sind aus currentColor gebaut,
+   die Schriftfarbe faerbt also Beschriftung und Symbol zugleich. */
+:root[data-theme="sw"] .nav-toggle { color: #000 !important; }
+
 /* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
 :root[data-theme="gb"] body,
 :root[data-theme="gb"] .page-head,
