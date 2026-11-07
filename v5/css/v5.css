@@ -232,6 +232,15 @@
 :root[data-theme="sw"] .job__tag,
 :root[data-theme="sw"] .quote { background: #fff !important; }
 
+/* Wortmarke rechts oben: das PNG ist freigestellt (78 % durchsichtig),
+   brightness(0) faerbt nur die sichtbaren Buchstaben schwarz. */
+:root[data-theme="sw"] .brand__logo { filter: brightness(0); }
+
+/* Menuebalken 'Sie sind hier': Desktop zeigt ihn unter dem Eintrag, das
+   Handy links daneben - beide Regeln holen die Farbe aus derselben
+   Variablen. Wird sie hier umdefiniert, stimmen beide Varianten zugleich. */
+:root[data-theme="sw"] .site-nav a[aria-current="page"] { --farbe-akzent: #000; }
+
 /* Gelb-Blau: klassischer Hochkontrast für Sehbeeinträchtigung */
 :root[data-theme="gb"] body,
 :root[data-theme="gb"] .page-head,
