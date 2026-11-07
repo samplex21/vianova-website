@@ -82,6 +82,23 @@ quellbilder/              unzugeschnittene Originale (z. B. teamcollage.jpg)
 - Den Hinweistext über den Kacheln anpassen, sobald sich das Verhältnis von
   echten Fotos zu Platzhaltern ändert.
 
+**Aktueller Stand der Fotos**
+
+Neun der vierzehn Personen haben ein echtes Foto, alle aus der Teamcollage
+geschnitten. Noch ohne Foto (gezeichneter Platzhalter):
+
+| Person | Bereich |
+| --- | --- |
+| Stefanie Brummer, MA | Prozessbegleitung |
+| Denise Burkert, MA | Prozessbegleitung |
+| Andreas Königsrainer, BA | Prozessbegleitung |
+| Claudia Hohenrainer | Verwaltung |
+| Stephan Mayr | Verwaltung |
+
+Umgekehrt zeigt die Collage zwei Personen, die auf der Seite nicht (mehr)
+genannt sind: **Angela Woldrich** und **Eveline Wolf**. Die Collage ist also
+älter als die Namensliste – beides sollte einmal abgeglichen werden.
+
 **Zur Teamcollage in `quellbilder/`**
 
 Alle Fotos stammen aus einem einzigen Bild (`quellbilder/teamcollage.jpg`,
